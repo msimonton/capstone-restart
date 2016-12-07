@@ -5,6 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var session = require('express-session')
+var passport = require('passport')
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -20,6 +23,14 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({
+  secret : "keyboard",
+  saveUninitialized: true,
+  resave: false
+}))
+
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
@@ -55,6 +66,21 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+// $(document).ready(()=> {
+// $.ajax({
+//   url: 'https://cors-anywhere.herokuapp.com/http://liftie.info/api/resort/breck',
+//   method: "GET",
+//   success: function (data)  {
+//     console.log(data)
+//   },
+//   error: function(err) {
+//             console.log(err)
+//         }
+// })
+// })
+
+
 
 
 module.exports = app;

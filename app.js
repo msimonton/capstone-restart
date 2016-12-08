@@ -10,6 +10,7 @@ var passport = require('passport')
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var Handlebars = require('handlebars');
 
 var app = express();
 
@@ -24,7 +25,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({
-  secret : "keyboard",
+  secret : "keyboardcat",
   saveUninitialized: true,
   resave: false
 }))
@@ -65,6 +66,10 @@ app.use(function(err, req, res, next) {
     message: err.message,
     error: {}
   });
+});
+
+Handlebars.registerHelper('raw-helper', function(options) {
+  return options.fn();
 });
 
 // $(document).ready(()=> {

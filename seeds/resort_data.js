@@ -4,26 +4,6 @@ exports.seed = function(knex, Promise) {
   return knex('resort_data').del()
     .then(function () {
       return Promise.all([
-        // Inserts seed entries
-        // knex('resort_data').insert({resort_name:
-        // knex('resort_data').insert({resort_name:
-        // knex('resort_data').insert({resort_name:
-        // knex('resort_data').insert({resort_name:
-        // knex('resort_data').insert({resort_name:
-        // knex('resort_data').insert({resort_name:
-        // knex('resort_data').insert({resort_name:
-        // knex('resort_data').insert({resort_name:
-        // knex('resort_data').insert({resort_name:
-        // knex('resort_data').insert({resort_name:
-        // knex('resort_data').insert({resort_name:
-        // knex('resort_data').insert({resort_name:
-        // knex('resort_data').insert({resort_name:
-        // knex('resort_data').insert({resort_name:
-        // knex('resort_data').insert({resort_name:
-        // knex('resort_data').insert({resort_name:
-        // knex('resort_data').insert({resort_name:
-        // knex('resort_data').insert({resort_name:
-
       	knex('resort_data').insert({resort_name:'Telluride',       beginner:45, intermediate: 45, advanced: 40, off_piste:	40, tree_skiing: 40, expert: 50, extreme: 45, snow: 40, freshies:	35, uncrowded: 35, slackcountry: 35, lifts: 50, terrain_park: 30, family_friendly:	45, daytime_restaurants: 50, nighttime_restaurants: 45, nightlife: 30, skin_skiout: 50, cost:	20, apres: 30, powderhounds: 45, overall: 50}),
       	knex('resort_data').insert({resort_name:'Beaver Creek',    beginner:45, intermediate: 40, advanced: 40, off_piste:	35, tree_skiing: 30, expert: 30, extreme: 25, snow: 35, freshies:	25, uncrowded: 25, slackcountry: 00, lifts: 45, terrain_park: 30, family_friendly:	45, daytime_restaurants: 35, nighttime_restaurants: 40, nightlife: 25, skin_skiout: 50, cost:	15, apres: 30, powderhounds: 35, overall: 40}),
       	knex('resort_data').insert({resort_name:'Snowmass',        beginner:30, intermediate: 50, advanced: 30, off_piste:	45, tree_skiing: 40, expert: 45, extreme: 45, snow: 40, freshies:	30, uncrowded: 35, slackcountry: 00, lifts: 45, terrain_park: 40, family_friendly:	50, daytime_restaurants: 35, nighttime_restaurants: 30, nightlife: 25, skin_skiout: 50, cost:	25, apres: 25, powderhounds: 40, overall: 45}),

@@ -3,8 +3,40 @@ var express = require('express');
 var router = express.Router();
 var query = require('../db/query.js')
 var auth = require('../passport.js')
+var knex = require('../db/knex_config');
 
 /* GET home page. */
+// function Resorts()  {
+//   return knex('resort_data')
+// }
+router.get('/find-resort', function(req, res){
+
+
+    return knex.select('overall').from('resort_data').then(function(result){
+
+        for(var i=0; i<result.length; i++)  {
+          var over = result[i].overall * 5; //use req.params
+          console.log(over)
+        }
+
+
+      res.render('find-resort')
+    });
+
+
+  });
+
+
+
+
+
+
+
+
+
+
+
+
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'COSummit' });
 });
@@ -38,10 +70,6 @@ router.get('/resorts', function(req, res, next) {
 
 router.get('/api', function(req, res, next) {
 
-})
-
-router.get('/map', function(req, res, next) {
-  res.render('map')
 })
 
 module.exports = router;

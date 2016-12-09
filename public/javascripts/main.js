@@ -3,7 +3,7 @@ $.ajax({
   url: 'https://cors-anywhere.herokuapp.com/http://liftie.info/api/resort/breck',
   method: "GET",
   success: function (data)  {
-    console.log(data)
+    // console.log(data)
     var obj = data.lifts.status
 
     $.each( obj, function( key, value ) {

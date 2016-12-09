@@ -37,7 +37,11 @@ router.get('/resorts', function(req, res, next) {
 })
 
 router.get('/api', function(req, res, next) {
-  
+
+})
+
+router.get('/map', function(req, res, next) {
+  res.render('map')
 })
 
 module.exports = router;

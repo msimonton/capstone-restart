@@ -10,9 +10,9 @@ const bodyParser = require('body-parser');
 const session = require('express-session')
 const passport = require('passport')
 
-const routes = require('./routes/index');
+const resorts = require('./routes/resort_query')
+const index = require('./routes/index');
 const users = require('./routes/users');
-const findResort = require('./routes/resort_query')
 const Handlebars = require('handlebars');
 
 const app = express();
@@ -37,9 +37,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+app.use('/', index);
 app.use('/users', users);
-app.use('/find-esort', findResort)
+app.use('/resorts', resorts)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

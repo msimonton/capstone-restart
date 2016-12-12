@@ -9,22 +9,24 @@ var knex = require('../db/knex_config');
 // function Resorts()  {
 //   return knex('resort_data')
 // }
-router.get('/find-resort', function(req, res){
-
-
-    return knex.select('overall').from('resort_data').then(function(result){
-
-        for(var i=0; i<result.length; i++)  {
-          var over = result[i].overall * 5; //use req.params
-          console.log(over)
-        }
-
-
-      res.render('find-resort')
-    });
-
-
-  });
+// router.get('/find-resort', function(req, res){
+//
+//
+//     return knex.select( 'resort_name', 'overall').from('resort_data').then(function(result){
+//
+//
+//         for(var i=0; i<result.length; i++)  {
+//           var names = result[i].resort_name; //use req.params
+//           var over = result[i].overall;
+//           console.log(names +" - " + over)
+//         }
+//
+//
+//       res.render('find-resort')
+//     });
+//
+//
+//   });
 
 
 
@@ -64,9 +66,9 @@ router.get('/welcome', auth.ensureAuthenticated,  function(req, res, next) {
   })
 })
 
-router.get('/resorts', function(req, res, next) {
-  res.render('resorts')
-})
+// router.get('/resorts', function(req, res, next) {
+//   res.render('resorts')
+// })
 
 router.get('/api', function(req, res, next) {
 

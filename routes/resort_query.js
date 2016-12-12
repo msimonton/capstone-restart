@@ -22,6 +22,100 @@ router.get('/find-resort', function(req, res, next) {
     });
 })
 
+//
+//
+// function findResortByName(){
+//   return knex('resort_data')
+//     .where("resort_name", 'Vail')
+//     .select(
+//       'resort_name',
+//       'beginner',
+//       'intermediate',
+//       'advanced',
+//       'off_piste',
+//       'tree_skiing',
+//       'expert',
+//       'extreme',
+//       'snow',
+//       'freshies',
+//       'uncrowded',
+//       'slackcountry',
+//       'lifts',
+//       'terrain_park',
+//       'family_friendly',
+//       'daytime_restaurants',
+//       'nighttime_restaurants',
+//       'nightlife',
+//       'skin_skiout',
+//       'cost',
+//       'apres',
+//       'powderhounds',
+//       'overall'
+//     )
+//     .first()
+//   }
+//
+//
+//   router.get('/:resort_name', (req, res, next) => {
+//     let resortData = findResortByName(req.params.resort_name)
+//       .then((data) => {
+//         res.render('resort-single', {
+//           title: 'COSummit',
+//           resort: JSON.stringify(data),
+//           data:data
+//         })
+// })
+// })
+
+
+
+
+function findResortByName(resortName){
+  return knex('resort_data')
+    .where('resort_name', resortName)
+    .select(
+      'resort_name',
+      'beginner',
+      'intermediate',
+      'advanced',
+      'off_piste',
+      'tree_skiing',
+      'expert',
+      'extreme',
+      'snow',
+      'freshies',
+      'uncrowded',
+      'slackcountry',
+      'lifts',
+      'terrain_park',
+      'family_friendly',
+      'daytime_restaurants',
+      'nighttime_restaurants',
+      'nightlife',
+      'skin_skiout',
+      'cost',
+      'apres',
+      'powderhounds',
+      'overall'
+    )
+    .first()
+  }
+
+
+  router.get('/:resort_name', (req, res, next) => {
+    let resData =findResortByName(req.params.resort_name)
+    Promise(resData)
+      .then((data) => {
+        res.render('resort-single', {
+          title: 'COSummit',
+          resort: JSON.stringify(data),
+          data:data
+        })
+
+})
+})
+
+
 
 
 

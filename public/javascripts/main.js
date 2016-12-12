@@ -32,3 +32,7 @@ function initMap() {
     map: map
   });
 }
+
+
+
+            //  Resort search range labels

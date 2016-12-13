@@ -138,6 +138,7 @@ router.get('/:id', function(req, res, next){
 
 
 
+
 /* GET home page. */
 // router.get('/find-resort', function(req, res){
 //

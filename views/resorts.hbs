@@ -1,1 +1,7 @@
-<div id='results'></div>
+<h1>All resorts</h1>
+
+<ul>
+  {{#each resorts}}
+  <li><a href='/resorts/{{this.id}}'>{{this.resort_name}}></li>
+  {{/each}}
+</ul>

@@ -116,6 +116,7 @@ router.get('/find-resort', function(req, res, next) {
 // })
 router.get('/all', function(req, res, next)  {
   knex('resort_data').select('resort_name', 'id')
+  .orderBy('resort_name', 'asc')
   .then(function(resorts) {
     res.render('resorts', {resorts:resorts})
   })

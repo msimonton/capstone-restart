@@ -1,16 +1,25 @@
+
+
+
+
 $(document).ready(()=> {
 $.ajax({
   url: 'https://cors-anywhere.herokuapp.com/http://liftie.info/api/resort/breck',
   method: "GET",
   success: function (data)  {
-    // console.log(data)
-    var obj = data.lifts.status
+    var obj = data.lifts.status;
+    var cams = data.webcams;
+    for(var i=0;i<cams.length;i++)  {
+      $('#cam').append('<img src='+cams[i].image+'>')
+    }
+    console.log(data);
+
 
     $.each( obj, function( key, value ) {
       $('#results').append('<p>'+ key + ": " + value+'</p>' );
-    });//     for(var i=0; i<9;i++){
-//   $('#results').append('<p>'+data.lifts.status[i]+'</p>')
-// }
+    });
+    $('#cam').append('<div>' + data.weather.conditions+'</div>')
+
   },
   error: function(err) {
             console.log(err)

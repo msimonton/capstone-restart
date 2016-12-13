@@ -1,8 +1,8 @@
 var knex = require('./knex_config.js')
 
-var Users = function(){
-  return knex('users')
-};
+// var Users = function(){
+//   return knex('users')
+// };
 //
 // function Resorts() {
 //   return knex('resort_data');

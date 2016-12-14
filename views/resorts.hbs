@@ -1,7 +1,8 @@
-<h1>All resorts</h1>
+<h1 onload="checkCookie()">All resorts</h1>
 
-<ul>
+<ul id='resortList'>
   {{#each resorts}}
-  <li><a href='/resorts/{{this.id}}'>{{this.resort_name}}</li>
+  <a href='/resorts/{{this.id}}'>
+     <li value='{{this.resort_name}}' class='resortList'id='{{this.api_path}}'>{{this.resort_name}}</li>
   {{/each}}
 </ul>

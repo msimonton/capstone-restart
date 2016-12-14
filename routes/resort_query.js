@@ -115,7 +115,7 @@ router.get('/find-resort', function(req, res, next) {
 // })
 // })
 router.get('/all', function(req, res, next)  {
-  knex('resort_data').select('resort_name', 'id')
+  knex('resort_data').select('resort_name', 'id', 'api_path')
   .orderBy('resort_name', 'asc')
   .then(function(resorts) {
     res.render('resorts', {resorts:resorts})
@@ -128,6 +128,8 @@ router.get('/:id', function(req, res, next){
     res.render('resort-single', {data: data})
   })
 })
+
+
 
 
 

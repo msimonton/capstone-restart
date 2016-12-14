@@ -3,6 +3,7 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable('resort_data', function(table) {
   table.increments();
   table.string('resort_name');
+  table.string('api_path');
   table.integer('beginner');
   table.integer('intermediate');
   table.integer('advanced');

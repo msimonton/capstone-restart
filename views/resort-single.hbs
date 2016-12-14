@@ -5,6 +5,13 @@
 
 <div id='resort-single-data'></div>
 
+<div id='results'>
+
+</div>
+<div id='cam'>
+  
+</div>
+
 
 
 <ol>
@@ -13,11 +20,31 @@
   {{/each}}
 </ol>
 
-<script>$(document).ready(()=> {
+<ol id='ham'>
+  <li id='1'>one</li>
+  <li id='2'>two</li>
 
-  var liftieUrl = 'https://cors-anywhere.herokuapp.com/http://liftie.info/api/resort/'
+</ol>
+<script>
+$(document).ready(() => {
+  $('li').click(function()  {
+    console.log(this.id)
+  })
+})
+
+</script>
+
+<!-- <script>
+$(document).ready(()=> {
+  var liftieUrl = 'https://cors-anywhere.herokuapp.com/http://liftie.info/api/resort/breckenridge'
+  $('#resortList li').click(function()  {
+    var $this = $(this)
+    var selKeyVal = $this.attr("value")
+    console.log('Text ' + $this.text() + 'value ' + selKeyVal);
+    console.log($(this).attr('id'))
+  })
 $.ajax({
-  url: liftieUrl + '{{resorts.id}}',
+  url: liftieUrl,
   method: "GET",
   success: function (data)  {
     var obj = data.lifts.status;
@@ -38,4 +65,5 @@ $.ajax({
             console.log(err)
         }
 })
-})</script>
+})
+</script> -->

@@ -40,7 +40,7 @@ var knex = require('../db/knex_config');
 
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'COSummit' });
+  res.render('index');
 });
 
 router.get('/auth/google', auth.passport.authenticate('google', {

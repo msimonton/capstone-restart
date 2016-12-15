@@ -129,8 +129,12 @@ router.get('/:id', function(req, res, next){
   })
 })
 
-
-
+router.get('/ham', function(req, res, next)  {
+  knex('resort_details').select()
+  .then(function(resDets) {
+    res.render('api', {resDets: resDets})
+  })
+})
 
 
 

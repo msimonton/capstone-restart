@@ -21,7 +21,6 @@ exports.up = function(knex, Promise) {
     table.integer('resort_id')
   .references('resort_data.id')
   .onDelete('CASCADE');
-})
   })
 
 };

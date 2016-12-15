@@ -66,12 +66,19 @@ router.get('/welcome', auth.ensureAuthenticated,  function(req, res, next) {
   })
 })
 
+
+router.get('/ham', function(req, res, next)  {
+  knex('resort_details').select()
+  .then(function(resDets) {
+    res.render('api', {resDets: resDets})
+  })
+})
+
+
 // router.get('/resorts', function(req, res, next) {
 //   res.render('resorts')
 // })
 
-router.get('/api', function(req, res, next) {
 
-})
 
 module.exports = router;

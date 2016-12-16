@@ -1,5 +1,24 @@
 var knex = require('./knex_config.js')
 
+// var resJoin = function()  {
+//   knex('resort_data')
+//   .join('resort_details', 'resort_data.id', 'resort_details.resort_id')
+//   .select()
+// }
+
+var resDetByData = function(id){
+  return knex('resort_details').where('resort_details.resort_id', id)
+}
+
+
+
+function resById(id){
+  return knex('resort_data')
+    .where("resort_data.id", id)
+    .join('resort_details', 'resort_data.id', 'resort_details.resort_id')
+    .select()
+  }
+
 
 var Users = function(){
   return knex('user')
@@ -28,6 +47,33 @@ var resSearchValues = function(formVals)  {
 }
 
 module.exports = {
+
+
+  // resById :function resById(id){
+  //   return knex('resort_data')
+  //     .where("resort_data.id", id)
+  //     .join('resort_details', 'resort_data.id', 'resort_details.resort_id')
+  //     .select('*')
+  //   },
+  //
+  //
+
+
+
+
+  getDetailsByData: function()  {
+    return resDetByData()
+  },
+
+  resortById: function()  {
+    return resById()
+  },
+
+
+  getAllResData: function() {
+    return resJoin()
+  },
+
 
   Resorts: function () {
     return knex.select(

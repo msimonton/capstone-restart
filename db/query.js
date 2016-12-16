@@ -1,5 +1,6 @@
 var knex = require('./knex_config.js')
 
+
 var Users = function(){
   return knex('user')
 };
@@ -7,10 +8,21 @@ var Users = function(){
 function Resorts() {
   return knex('resort_data');
 }
-
-
+var resSearchValues = function(formVals)  {
+  return knex('resort_data').select()
+}
 
 module.exports = {
+
+
+
+  getAllResorts: function() {
+    return Resorts();
+  },
+
+  getSearchValues : function()  {
+    return resSearchValues();
+  },
 
   getAllUsers : function(){
     return Users();

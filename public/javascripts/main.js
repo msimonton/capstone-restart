@@ -1,4 +1,31 @@
 'Use Strict'
+
+
+
+
+var vals= {
+ beg:'',
+ int:'',
+ adv:'',
+ exp:'',
+ trees:'' ,
+ piste:'',
+ snowQual:'' ,
+ crowds:'',
+ terr: '',
+ fam:'',
+ night:'' ,
+ skiin: '',
+ apres: '',
+ cost:''
+}
+
+
+console.log(vals)
+
+
+
+
 var docCookies = {
     getItem: function(sKey) {
         if (!sKey) {return null;}
@@ -68,20 +95,41 @@ $(document).ready(() => {
             }
             console.log(data);
 
-
             $.each(obj, function(key, value) {
                 $('#results').append('<p>' + key + ": " + value + '</p>');
             });
             $('#cam').append('<div>' + data.weather.conditions + '</div>')
-
         },
         error: function(err) {
             console.log(err)
         }
+      })
     })
-})
+    $('#resSearchForm').submit(function(event)  {
+      event.preventDefault()
 
-})
+
+       vals= {
+       beg: parseInt($('#begInput').val()),
+       int: parseInt($('#intInput').val()),
+       adv: parseInt($('#advInput').val()),
+       exp: parseInt($('#expInput').val()),
+       trees: parseInt($('#treeInput').val()),
+       piste:parseInt($('#pisteInput').val()),
+       snowQual: parseInt($('#snowInput').val()),
+       crowds: parseInt($('#crowdInput').val()),
+       terr: parseInt($('#terrInput').val()),
+       fam: parseInt($('#famInput').val()),
+       night: parseInt($('#nightInput').val()),
+       skiin: parseInt($('#skiinInput').val()),
+       apres: parseInt($('#apresInput').val()),
+       cost: parseInt($('#costInput').val())
+     }
+     console.log(vals)
+
+    })
+  })
+
 
 
 
@@ -99,6 +147,7 @@ function initMap() {
         map: map
     });
 }
+
 
 
 

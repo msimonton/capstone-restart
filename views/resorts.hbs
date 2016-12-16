@@ -2,7 +2,23 @@
 
 <ul id='resortList'>
   {{#each resorts}}
-  <a href='/resorts/{{this.id}}'>
+  <a href='/resorts/single/{{this.id}}'>
      <li value='{{this.resort_name}}' class='resortList'id='{{this.api_path}}'>{{this.resort_name}}</li>
   {{/each}}
 </ul>
+
+
+{{#each resBat}}
+<p>{{this.id}}</p>
+{{/each}}
+
+<div class="card">
+  <img class="card-img-top" src=""
+       alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">Card title</h4>
+    <p class="card-text">Some quick example text to build on
+    the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Button</a>
+  </div>
+</div>

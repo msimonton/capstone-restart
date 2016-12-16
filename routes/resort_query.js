@@ -27,11 +27,21 @@ router.get('/find-resort', function(req, res, next) {
 })
 
 
-router.get('/all', function(req, res, next)  {
-  knex('resort_data').select('resort_name', 'id', 'api_path')
-  .orderBy('resort_name', 'asc')
-  .then(function(resorts) {
-    res.render('resorts', {resorts:resorts})
+// router.get('/all', function(req, res, next)  {
+//   knex('resort_data').select('resort_name', 'id', 'api_path', 'overall')
+//   .orderBy('resort_name', 'asc')
+//   .then(function(resorts) {
+//     res.render('resorts', {resorts:resorts})
+//   })
+// })
+
+
+router.get('/all', function(req, res, next){
+  knex('resort_data')
+  .join('resort_details', 'resort_data.id', 'resort_details.resort_id').select()
+  .then(function(resorts){
+    res.render('resorts', {resorts: resorts})
+    console.log(resorts)
   })
 })
 

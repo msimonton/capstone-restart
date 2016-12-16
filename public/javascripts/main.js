@@ -3,22 +3,6 @@
 
 
 
-var vals= {
- beg:'',
- int:'',
- adv:'',
- exp:'',
- trees:'' ,
- piste:'',
- snowQual:'' ,
- crowds:'',
- terr: '',
- fam:'',
- night:'' ,
- skiin: '',
- apres: '',
- cost:''
-}
 
 
 
@@ -58,10 +42,10 @@ $(document).ready(() => {
       })
     })
     $('#resSearchForm').submit(function(event)  {
-      // event.preventDefault()
-
+      event.preventDefault()
 
        vals= {
+
        beg: parseInt($('#begInput').val()),
        int: parseInt($('#intInput').val()),
        adv: parseInt($('#advInput').val()),
@@ -77,27 +61,26 @@ $(document).ready(() => {
        apres: parseInt($('#apresInput').val()),
        cost: parseInt($('#costInput').val())
      }
+     console.log(vals)
 
-    //  var id = $('#begInput').val();
+     var id = $('#begInput').val();
 
-    //  $.ajax({
-    //     type: 'post',
-    //     url: '/resort/search-results/test',
-    //     data : {
-    //          id : id
-    //     },
-    //     success: function(data) {
-    //          var id = data.id;
-    //          $('#begInput').val(id);
-    //          console.log(id)
-    //     },
-    //     error: function(err) {
-    //          console.log(err);
-    //     }
-    //
-    // });
-    //  console.log(vals)
-    //
+     $.ajax({
+        type: 'post',
+        url: '/resorts/search-results',
+        data : vals,
+        success: function(data) {
+             var id = data.id;
+             $('#begInput').val(id);
+             window.location=(data)
+        },
+        error: function(err) {
+             console.log(err);
+        }
+
+    });
+     console.log(vals)
+
     })
   })
 

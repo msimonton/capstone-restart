@@ -1,6 +1,21 @@
-<ul>
 
-{{#each searchResults}}
-<li>{{this.value}}</li>
-{{/each}}
-</ul>
+
+<div class='container-fluid' id='all-resorts'>
+
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+        {{#each searchResults}}
+            <div class="card" id='resortList'>
+                <a href='/resorts/single/{{this.id}}'>
+                    <img class="card-img-top" id="card-pic"src="{{this.image}}" />
+                    <div class="card-block">
+                        <h4 class="card-title">{{this.resort_name}}</h4>
+                    </div>
+                </a>
+            </div>
+    {{/each}}
+    <div class="col-lg-2"></div>
+  </div>
+  </div>
+</div>

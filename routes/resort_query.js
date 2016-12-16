@@ -49,14 +49,67 @@ router.get('/ham', function(req, res, next)  {
   })
 })
 
+
+// router.post('/search-results/test', function(req, res) {
+//
+//     var data = req.body;
+//     var id = data.id;
+//     console.log(data)
+// })
+
 router.get('/search-results', function (req, res, next) {
-  query.getSearchValues()
+  query.Resorts()
   .then(function(searchResults) {
+    var count=0
+    var large= []
+    var m = searchResults;
+    for(var i=0;i<m.length;i++ ) {
+      var n= m[i].beginner*2 +m[i].intermediate+m[i].advanced+m[i].expert+m[i].tree_skiing
+      +m[i].snow+m[i].off_piste+m[i].uncrowded+m[i].terrain_park+m[i].family_friendly+m[i].nightlife+m[i].skin_skiout+m[i].apres+m[i].cost
+
+
+      console.log(n)
+
+
+
+  //     large.push(n)
+  //     large.sort(function(a, b) {
+  // return a - b;
+// });
+
+
+    }
+
 
     res.render('search-results', {searchResults:searchResults})
   })
 })
 
+
+
+// router.get('/search-results', function (req, res, next) {
+//   query.Resorts()
+//   .then(function(searchResults) {
+//     for(var i =0; i<searchResults.length;i++) {
+//       console.log(searchResults[i] )
+//     }
+//
+
+
+
+//
+// router.post('/id', function(req, res) {
+//
+//     var data = req.body;
+//     var id = data.id;
+//
+//     var query = knex('resort_data').select().where({id:id})
+//     .then(query, function(error, result) {
+//         console.log(result);
+//         res.send(result);
+//     });
+//
+// });
 
 
 

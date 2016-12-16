@@ -6,7 +6,22 @@ var Users = function(){
 };
 
 function Resorts() {
-  return knex('resort_data');
+  return knex.select(
+    'beginner',
+    'intermediate',
+    'advanced',
+    'expert',
+    'tree_skiing',
+    'snow',
+    'off_piste',
+    'uncrowded',
+    'terrain_park',
+    'family_friendly',
+    'nightlife',
+    'skin_skiout',
+    'apres',
+    'cost')
+    .from('resort_data')
 }
 var resSearchValues = function(formVals)  {
   return knex('resort_data').select()
@@ -14,6 +29,27 @@ var resSearchValues = function(formVals)  {
 
 module.exports = {
 
+  Resorts: function () {
+    return knex.select(
+      'id',
+      'beginner',
+      'intermediate',
+      'advanced',
+      'expert',
+      'tree_skiing',
+      'snow',
+      'off_piste',
+      'uncrowded',
+      'terrain_park',
+      'family_friendly',
+      'nightlife',
+      'skin_skiout',
+      'apres',
+      'cost')
+      .from('resort_data')
+  },
+
+  // plunc: knex.table('users').pluck('id').then(function(ids) { console.log(ids); });
 
 
   getAllResorts: function() {

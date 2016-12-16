@@ -21,8 +21,6 @@ var vals= {
 }
 
 
-console.log(vals)
-
 
 
 
@@ -106,7 +104,7 @@ $(document).ready(() => {
       })
     })
     $('#resSearchForm').submit(function(event)  {
-      event.preventDefault()
+      // event.preventDefault()
 
 
        vals= {
@@ -125,10 +123,55 @@ $(document).ready(() => {
        apres: parseInt($('#apresInput').val()),
        cost: parseInt($('#costInput').val())
      }
-     console.log(vals)
 
+    //  var id = $('#begInput').val();
+
+    //  $.ajax({
+    //     type: 'post',
+    //     url: '/resort/search-results/test',
+    //     data : {
+    //          id : id
+    //     },
+    //     success: function(data) {
+    //          var id = data.id;
+    //          $('#begInput').val(id);
+    //          console.log(id)
+    //     },
+    //     error: function(err) {
+    //          console.log(err);
+    //     }
+    //
+    // });
+    //  console.log(vals)
+    //
     })
   })
+
+
+
+
+
+
+//   function select() {
+//
+//      var id = $('#begInput').val();
+//
+//      $.ajax({
+//         type: 'post',
+//         url: '/id',
+//         data : {
+//              id : id
+//         },
+//         success: function(data) {
+//              var id = data.id;
+//              $('#begInput').val(id);
+//         },
+//         error: function(err) {
+//              console.log(err);
+//         }
+//
+//     });
+// }
 
 
 

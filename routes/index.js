@@ -74,7 +74,9 @@ router.get('/ham', function(req, res, next)  {
   })
 })
 
-
+router.get('/search', function(req, res, next) {
+  res.render('resort-search')
+})
 // router.get('/resorts', function(req, res, next) {
 //   res.render('resorts')
 // })

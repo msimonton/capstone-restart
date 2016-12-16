@@ -1,12 +1,12 @@
 var knex = require('./knex_config.js')
 
-// var Users = function(){
-//   return knex('users')
-// };
-//
-// function Resorts() {
-//   return knex('resort_data');
-// }
+var Users = function(){
+  return knex('user')
+};
+
+function Resorts() {
+  return knex('resort_data');
+}
 
 
 
@@ -16,7 +16,8 @@ module.exports = {
     return Users();
   },
   getAllUsersByIdAndGoogleProfileId : function(profile){
-    return Users().where('googleID', profile.id).first()
+    console.log(profile)
+    return Users().where('googleID', profile).first()
   },
 
   // getAllResorts: function() {

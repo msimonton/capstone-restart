@@ -30,10 +30,8 @@ passport.use(new GoogleStrategy({
                     console.log("it added a new user")
                     queries.getAllUsers().insert({
                             googleID: profile.id,
-                            token: accessToken,
                             name: profile.displayName,
-                            email: profile.emails[0].value,
-                            photo: profile.photos[0].value
+
                         }, "*")
                         .then((users) => {
                             return done(null, users[0])

@@ -3,74 +3,12 @@
 
 
 
-var vals= {
- beg:'',
- int:'',
- adv:'',
- exp:'',
- trees:'' ,
- piste:'',
- snowQual:'' ,
- crowds:'',
- terr: '',
- fam:'',
- night:'' ,
- skiin: '',
- apres: '',
- cost:''
-}
 
 
 
 
 
-var docCookies = {
-    getItem: function(sKey) {
-        if (!sKey) {return null;}
-        return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
-    },
-    setItem: function(sKey, sValue, vEnd, sPath, sDomain, bSecure) {
-        if (!sKey || /^(?:expires|max\-age|path|domain|secure)$/i.test(sKey)) {
-            return false;
-        }
-        var sExpires = "";
-        if (vEnd) {
-            switch (vEnd.constructor) {
-                case Number:
-                    sExpires = vEnd === Infinity ? "; expires=Fri, 31 Dec 9999 23:59:59 GMT" : "; max-age=" + vEnd;
-                    break;
-                case String:
-                    sExpires = "; expires=" + vEnd;
-                    break;
-                case Date:
-                    sExpires = "; expires=" + vEnd.toUTCString();
-                    break;
-            }
-        }
-        document.cookie = encodeURIComponent(sKey) + "=" + encodeURIComponent(sValue) + sExpires + (sDomain ? "; domain=" + sDomain : "") + (sPath ? "; path=" + sPath : "") + (bSecure ? "; secure" : "");
-        return true;
-    },
-    removeItem: function(sKey, sPath, sDomain) {
-        if (!this.hasItem(sKey)) {
-            return false;
-        }
-        document.cookie = encodeURIComponent(sKey) + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT" + (sDomain ? "; domain=" + sDomain : "") + (sPath ? "; path=" + sPath : "");
-        return true;
-    },
-    hasItem: function(sKey) {
-        if (!sKey) {
-            return false;
-        }
-        return (new RegExp("(?:^|;\\s*)" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=")).test(document.cookie);
-    },
-    keys: function() {
-        var aKeys = document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g, "").split(/\s*(?:\=[^;]*)?;\s*/);
-        for (var nLen = aKeys.length, nIdx = 0; nIdx < nLen; nIdx++) {
-            aKeys[nIdx] = decodeURIComponent(aKeys[nIdx]);
-        }
-        return aKeys;
-    }
-};
+
 
 $(document).ready(() => {
 
@@ -104,10 +42,10 @@ $(document).ready(() => {
       })
     })
     $('#resSearchForm').submit(function(event)  {
-      // event.preventDefault()
-
+      event.preventDefault()
 
        vals= {
+
        beg: parseInt($('#begInput').val()),
        int: parseInt($('#intInput').val()),
        adv: parseInt($('#advInput').val()),
@@ -123,27 +61,26 @@ $(document).ready(() => {
        apres: parseInt($('#apresInput').val()),
        cost: parseInt($('#costInput').val())
      }
+     console.log(vals)
 
-    //  var id = $('#begInput').val();
+     var id = $('#begInput').val();
 
-    //  $.ajax({
-    //     type: 'post',
-    //     url: '/resort/search-results/test',
-    //     data : {
-    //          id : id
-    //     },
-    //     success: function(data) {
-    //          var id = data.id;
-    //          $('#begInput').val(id);
-    //          console.log(id)
-    //     },
-    //     error: function(err) {
-    //          console.log(err);
-    //     }
-    //
-    // });
-    //  console.log(vals)
-    //
+     $.ajax({
+        type: 'post',
+        url: '/resorts/search-results',
+        data : vals,
+        success: function(data) {
+             var id = data.id;
+             $('#begInput').val(id);
+             window.location=(data)
+        },
+        error: function(err) {
+             console.log(err);
+        }
+
+    });
+     console.log(vals)
+
     })
   })
 

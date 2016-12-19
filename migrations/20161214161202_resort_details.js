@@ -2,6 +2,7 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('resort_details', function(table)  {
     table.increments('id').primary();
+    table.text('image');
     table.text('about');
     table.text('location');
     table.string('airports');

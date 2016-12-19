@@ -27,16 +27,42 @@ router.get('/find-resort', function(req, res, next) {
 })
 
 
-router.get('/all', function(req, res, next)  {
-  knex('resort_data').select('resort_name', 'id', 'api_path')
-  .orderBy('resort_name', 'asc')
-  .then(function(resorts) {
-    res.render('resorts', {resorts:resorts})
+// router.get('/all', function(req, res, next)  {
+//   knex('resort_data').select('resort_name', 'id', 'api_path', 'overall')
+//   .orderBy('resort_name', 'asc')
+//   .then(function(resorts) {
+//     res.render('resorts', {resorts:resorts})
+//   })
+// })
+
+
+router.get('/all', function(req, res, next){
+  knex('resort_data')
+  .join('resort_details', 'resort_data.id', 'resort_details.resort_id').select()
+  .then(function(resorts){
+    res.render('resorts', {resorts: resorts})
+    console.log(resorts)
   })
 })
 
+// router.get('/single/:id', function(req, res, next){
+//   var detRes = query.getDetailsByData(req.params.id)
+//   var dataRes = query.resortById(req.params.id)
+//   Promise.all([dataRes, detRes])
+//   .then(function(data)  {
+//     res.render('resort-single', {data:data})
+//   })
+//   .catch((err) => {
+//   console.error('Error')
+//   next(err)
+// })
+// })
+
+
+
 router.get('/single/:id', function(req, res, next){
-  knex('resort_data').where({id:req.params.id}).first()
+  knex('resort_data')
+  .join('resort_details', 'resort_data.id', 'resort_details.resort_id').where({"resort_data.id":req.params.id}).first()
   .then(function(data){
     res.render('resort-single', {data: data})
   })
@@ -47,69 +73,66 @@ router.get('/ham', function(req, res, next)  {
   .then(function(resDets) {
     res.render('api', {resDets: resDets})
   })
-})
-
-
-// router.post('/search-results/test', function(req, res) {
-//
-//     var data = req.body;
-//     var id = data.id;
-//     console.log(data)
-// })
-
-router.get('/search-results', function (req, res, next) {
-  query.Resorts()
-  .then(function(searchResults) {
-    var count=0
-    var large= []
-    var m = searchResults;
-    for(var i=0;i<m.length;i++ ) {
-      var n= m[i].beginner*2 +m[i].intermediate+m[i].advanced+m[i].expert+m[i].tree_skiing
-      +m[i].snow+m[i].off_piste+m[i].uncrowded+m[i].terrain_park+m[i].family_friendly+m[i].nightlife+m[i].skin_skiout+m[i].apres+m[i].cost
-
-
-      console.log(n)
-
-
-
-  //     large.push(n)
-  //     large.sort(function(a, b) {
-  // return a - b;
-// });
-
-
-    }
-
-
-    res.render('search-results', {searchResults:searchResults})
+    .catch((err) => {
+    console.error('Error')
+    next(err)
   })
 })
 
+router.get('/search-results/:id1/:id2/:id3/:id4', function (req, res, next) {
+  knex('resort_data')
+  .join('resort_details', 'resort_data.id', 'resort_details.resort_id').select()
+  .then(function(searchResults) {
+  var topResorts=[req.params.id1,
+                  req.params.id2,
+                  req.params.id3,
+                  req.params.id4
+                ]
+                .map(function(id) {
+                  return searchResults.find(function(resort)  {
+                    return resort.id==id
+                  })
+                })
+    console.log(topResorts)
 
+    res.render('search-results', {searchResults:topResorts})
+  })
+})
 
-// router.get('/search-results', function (req, res, next) {
-//   query.Resorts()
-//   .then(function(searchResults) {
-//     for(var i =0; i<searchResults.length;i++) {
-//       console.log(searchResults[i] )
-//     }
-//
-
-
-
-//
-// router.post('/id', function(req, res) {
-//
-//     var data = req.body;
-//     var id = data.id;
-//
-//     var query = knex('resort_data').select().where({id:id})
-//     .then(query, function(error, result) {
-//         console.log(result);
-//         res.send(result);
-//     });
-//
-// });
+  router.post('/search-results', function (req, res, next) {
+    query.Resorts()
+    .then(function(searchResults) {
+      var w=req.body
+      var count=0
+      var m = searchResults;
+      for(var i=0;i<m.length;i++ ) {
+        var n= m[i].beginner*w.beg
+        +m[i].intermediate*w.int
+        +m[i].advanced*w.adv
+        +m[i].expert*w.exp
+        +m[i].tree_skiing*w.trees
+        +m[i].snow*w.snowQual
+        +m[i].off_piste*w.piste
+        +m[i].uncrowded*w.crowds
+        +m[i].terrain_park*w.terr
+        +m[i].family_friendly*w.fam
+        +m[i].nightlife*w.night
+        +m[i].skin_skiout*w.skiin
+        +m[i].apres*w.apres
+        +m[i].cost*w.cost
+        m[i].overall=n
+      }
+      m.sort(function(a,b)  {
+        return b.overall - a.overall
+      })
+      console.log(m)
+      var nOne = m[0].id
+      var nTwo = m[1].id
+      var nThree = m[2].id
+      var nFour = m[3].id
+      res.send('/resorts/search-results/'+nOne+'/'+nTwo+'/'+nThree+'/'+nFour)
+  })
+})
 
 
 

@@ -1,3 +1,6 @@
+'use strict'
+
+
 var knex = require('./knex_config.js')
 
 // var resJoin = function()  {

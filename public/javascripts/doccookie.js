@@ -1,3 +1,4 @@
+'use strict'
 var docCookies = {
     getItem: function(sKey) {
         if (!sKey) {return null;}

@@ -13,7 +13,7 @@
 $(document).ready(() => {
 
     var liftieUrl = 'https://cors-anywhere.herokuapp.com/http://liftie.info/api/resort/'
-    $('.resortList').click(function() {
+    $('.card').click(function() {
         console.log(this.id)
         docCookies.setItem("resortPathId", '' + this.id + '')
 

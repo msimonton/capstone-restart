@@ -29,7 +29,6 @@ $(document).ready(() => {
             for (var i = 0; i < cams.length; i++) {
                 $('#cam').append('<img src=' + cams[i].image + '>')
             }
-            console.log(data);
 
             $.each(obj, function(key, value) {
                 $('#results').append('<p>' + key + ": " + value + '</p>');
@@ -79,7 +78,6 @@ $(document).ready(() => {
         }
 
     });
-     console.log(vals)
 
     })
   })

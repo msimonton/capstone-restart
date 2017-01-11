@@ -93,7 +93,6 @@ router.get('/search-results/:id1/:id2/:id3/:id4', function (req, res, next) {
                     return resort.id==id
                   })
                 })
-    console.log(topResorts)
 
     res.render('search-results', {searchResults:topResorts})
   })

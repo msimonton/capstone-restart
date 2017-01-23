@@ -85,3 +85,22 @@ display: block;
   width: 70%;
   text-align:justify;
 }
+
+
+
+
+
+
+
+/*       single resort        */
+
+.res_image  {
+  width:25%;
+
+}
+
+
+#resort_ratings, #terrain_ratings {
+  display: inline-block;
+  margin: 20px;
+}

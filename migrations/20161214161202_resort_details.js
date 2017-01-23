@@ -23,7 +23,6 @@ exports.up = function(knex, Promise) {
   .references('resort_data.id')
   .onDelete('CASCADE');
   })
-
 };
 
 exports.down = function(knex, Promise) {

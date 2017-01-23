@@ -2,11 +2,6 @@
 var knex = require('./knex_config.js')
 
 
-
-
-
-
-
 $(document).ready(function()  {
 $('#resSearchForm').submit(function(event)  {
   event.preventDefault()
@@ -28,8 +23,6 @@ $('#resSearchForm').submit(function(event)  {
    apres: parseInt($('#apresInput').val()),
    cost: parseInt($('#costInput').val())
  }
-  console.log(vals)
-
 })
 })
 })

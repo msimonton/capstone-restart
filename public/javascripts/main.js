@@ -60,7 +60,6 @@ $(document).ready(() => {
        apres: parseInt($('#apresInput').val()),
        cost: parseInt($('#costInput').val())
      }
-     console.log(vals)
 
      var id = $('#begInput').val();
 

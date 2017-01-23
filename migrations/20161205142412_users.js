@@ -4,9 +4,7 @@ exports.up = function(knex, Promise) {
     table.increments();
     table.string('googleID');
     table.string('name')
-
   })
-
 };
 
 exports.down = function(knex, Promise) {

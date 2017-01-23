@@ -79,3 +79,9 @@ display: block;
 #resSearchForm  {
   color:white;
 }
+
+.about_mnt_loc  {
+  background-color: rgb(193, 193, 193);
+  width: 70%;
+  text-align:justify;
+}

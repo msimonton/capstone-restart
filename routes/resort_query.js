@@ -41,7 +41,7 @@ router.get('/all', function(req, res, next){
   .join('resort_details', 'resort_data.id', 'resort_details.resort_id').select()
   .then(function(resorts){
     res.render('resorts', {resorts: resorts})
-    console.log(resorts)
+
   })
 })
 
@@ -124,7 +124,6 @@ router.get('/search-results/:id1/:id2/:id3/:id4', function (req, res, next) {
       m.sort(function(a,b)  {
         return b.overall - a.overall
       })
-      console.log(m)
       var nOne = m[0].id
       var nTwo = m[1].id
       var nThree = m[2].id

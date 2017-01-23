@@ -43,15 +43,16 @@ passport.use(new GoogleStrategy({
 ));
 
 module.exports = {
-  passport: passport,
+    passport: passport,
 
-  //route middleware to ensure user is authenticated
-  ensureAuthenticated: function(req, res, next) {
-    if (req.isAuthenticated()) {
-      console.log('user is authenticated')
-        return next();
-    } else {
-        console.log('ensure authenticated didnt work')
-        res.redirect('/');
+    //route middleware to ensure user is authenticated
+    ensureAuthenticated: function(req, res, next) {
+        if (req.isAuthenticated()) {
+            console.log('user is authenticated')
+            return next();
+        } else {
+            console.log('ensure authenticated didnt work')
+            res.redirect('/');
+        }
     }
-}}
+}

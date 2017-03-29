@@ -104,3 +104,15 @@ display: block;
   display: inline-block;
   margin: 20px;
 }
+
+
+#resortList_2 {
+  display: block;
+  margin:auto;
+  margin-bottom: 10px;
+}
+
+
+#all-resorts  {
+  text-align: center;
+}

@@ -1,18 +1,14 @@
-<div class='container-fluid' id='all-resorts'>
-    <div class="row">
-        <div class="col-lg-2"></div>
-        <div class="col-lg-8">
+<div  id='all-resorts'>
+
         {{#each searchResults}}
-            <div class="card" id='resortList'>
+            <div class="card" id='resortList resortList-2'>
                 <a href='/resorts/single/{{this.id}}'>
                     <img class="card-img-top" id="card-pic"src="{{this.image}}" />
                     <div class="card-block">
                         <h4 class="card-title">{{this.resort_name}}</h4>
+                        <p>{{this.acres}}</p>
                     </div>
                 </a>
             </div>
     {{/each}}
-    <div class="col-lg-2"></div>
-  </div>
-  </div>
 </div>

@@ -79,14 +79,15 @@ router.get('/ham', function(req, res, next)  {
   })
 })
 
-router.get('/search-results/:id1/:id2/:id3/:id4', function (req, res, next) {
+router.get('/search-results/:id1/:id2/:id3/:id4/:id5', function (req, res, next) {
   knex('resort_data')
   .join('resort_details', 'resort_data.id', 'resort_details.resort_id').select()
   .then(function(searchResults) {
   var topResorts=[req.params.id1,
                   req.params.id2,
                   req.params.id3,
-                  req.params.id4
+                  req.params.id4,
+                  req.params.id5
                 ]
                 .map(function(id) {
                   return searchResults.find(function(resort)  {
@@ -128,7 +129,8 @@ router.get('/search-results/:id1/:id2/:id3/:id4', function (req, res, next) {
       var nTwo = m[1].id
       var nThree = m[2].id
       var nFour = m[3].id
-      res.send('/resorts/search-results/'+nOne+'/'+nTwo+'/'+nThree+'/'+nFour)
+      var nFive = m[4].id
+      res.send('/resorts/search-results/'+nOne+'/'+nTwo+'/'+nThree+'/'+nFour+'/'+nFive)
   })
 })
 

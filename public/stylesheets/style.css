@@ -68,7 +68,6 @@ a {
 
 
 #resortList {
-  overflow: hidden;
 }
 
 #all-resorts  {
@@ -104,7 +103,7 @@ a {
 }
 
 
-#resortList-2 {
+#resortList2 {
   display: block;
   margin:auto;
   margin-bottom: 30px;
@@ -112,6 +111,7 @@ a {
   width: auto;
   max-width: 600px;
   min-width: 200px;
+  text-align: center;
 }
 
 

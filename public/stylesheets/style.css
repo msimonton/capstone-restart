@@ -1,6 +1,11 @@
 body {
 
-  background-color:black ;
+  background-color:rgb(124, 138, 159) ;
+  /*background-image: url('../images/breck-background.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-attachment: scroll;*/
 }
 .jumbotron-fluid  {
   background-image: url('../images/COSummitbannerbreckphoto1.jpg');
@@ -54,7 +59,6 @@ a {
   margin-top:20px;
   margin-left: 20px;
   width: 27%;
-  display: inline-block;
 }
 
 #map {
@@ -62,15 +66,8 @@ a {
   width: 100%;
  }
 
-#card-pic {
-  height: 21vh;
-margin: auto;
-overflow: hidden;
-display: block;
-}
 
 #resortList {
-  overflow: hidden;
 }
 
 #all-resorts  {
@@ -84,4 +81,68 @@ display: block;
   background-color: rgb(193, 193, 193);
   width: 70%;
   text-align:justify;
+}
+
+
+
+
+
+
+
+/*       single resort        */
+
+.res_image  {
+  width:25%;
+
+}
+
+
+#resort_ratings, #terrain_ratings {
+  display: inline-block;
+  margin: 20px;
+}
+
+
+#resortList2 {
+  display: block;
+  margin:auto;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  width: auto;
+  max-width: 600px;
+  min-width: 200px;
+  text-align: center;
+}
+
+
+#all-resorts  {
+  text-align: center;
+}
+
+.resort-cards {
+  text-decoration: none;
+  color: black;
+}
+
+.card-title {
+  margin-top: 15px;
+  font-size: 40px;
+}
+
+.card {
+  margin-top: 10px;
+  text-decoration: none;
+
+}
+.card:hover {
+text-decoration: none !important;
+}
+
+a.resort-cards:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-img-top {
+  width: 90%;
 }

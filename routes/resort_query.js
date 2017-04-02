@@ -65,6 +65,7 @@ router.get('/single/:id', function(req, res, next){
   .join('resort_details', 'resort_data.id', 'resort_details.resort_id').where({"resort_data.id":req.params.id}).first()
   .then(function(data){
     res.render('resort-single', {data: data})
+    console.log(data.api_path)
   })
 })
 

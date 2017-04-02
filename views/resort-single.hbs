@@ -4,6 +4,8 @@
 <div id='results'>
 </div>
 
+<h1>{{data.api_path}}</h1>
+
 <div id='cam'>
 </div>
 
@@ -80,44 +82,32 @@ Cost: {{data.cost}}<br />
     <li id='2'>two</li>
 
 </ol>
+
 <script>
-    $(document).ready(() => {
-        $('li').click(function() {
-            // console.log(this.id)
-        })
-    })
-</script>
+$(document).ready(() => {
 
-<!-- <script>
-$(document).ready(()=> {
-  var liftieUrl = 'https://cors-anywhere.herokuapp.com/http://liftie.info/api/resort/breckenridge'
-  $('#resortList li').click(function()  {
-    var $this = $(this)
-    var selKeyVal = $this.attr("value")
-    console.log('Text ' + $this.text() + 'value ' + selKeyVal);
-    console.log($(this).attr('id'))
-  })
-$.ajax({
-  url: liftieUrl,
-  method: "GET",
-  success: function (data)  {
-    var obj = data.lifts.status;
-    var cams = data.webcams;
-    for(var i=0;i<cams.length;i++)  {
-      $('#cam').append('<img src='+cams[i].image+'>')
-    }
-    console.log(data);
+    var liftieUrl = 'https://cors-anywhere.herokuapp.com/http://liftie.info/api/resort/'
+    $.ajax({
+        url: liftieUrl + "{{data.api_path}}",
+        method: "GET",
+        success: function(datas) {
+          console.log(datas)
+            var obj = datas.lifts.status;
+            var cams = datas.webcams;
+            for (var i = 0; i < cams.length; i++) {
+                $('#cam').append('<img src=' + cams[i].image + '>')
+            }
 
-
-    $.each( obj, function( key, value ) {
-      $('#results').append('<p>'+ key + ": " + value+'</p>' );
-    });
-    $('#cam').append('<div>' + data.weather.conditions+'</div>')
-
-  },
-  error: function(err) {
+            $.each(obj, function(key, value) {
+                $('#results').append('<p>' + key + ": " + value + '</p>');
+            });
+            $('#cam').append('<div>' + datas.weather.conditions + '</div>')
+        },
+        error: function(err) {
             console.log(err)
         }
-})
-})
-</script> -->
+      })
+    })
+
+
+</script>

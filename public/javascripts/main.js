@@ -1,6 +1,6 @@
 'Use Strict'
 
-// $(document).ready(() => {
+$(document).ready(() => {
 //   $('.resID').click(function() {
 //     var liftieUrl = 'https://cors-anywhere.herokuapp.com/http://liftie.info/api/resort/breck'
 //     var resAPI= this.id
@@ -153,6 +153,7 @@ function initMap() {
     });
 }
 
+})
 
 
 

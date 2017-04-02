@@ -1,3 +1,5 @@
+<div id='load-time'>
+
 <h1>{{data.resort_name}}</h1>
 <div id='resort-single-data'></div>
 
@@ -82,6 +84,7 @@ Cost: {{data.cost}}<br />
     <li id='2'>two</li>
 
 </ol>
+</div>
 
 <script>
 $(document).ready(() => {
@@ -116,5 +119,14 @@ $(document).ready(() => {
       })
     })
 
+    // window.onload = function(){
+    //        $("#load-time").fadeIn(3000)
+    // };
 
+    window.onload = function(){
+       setTimeout(function(){
+           $("#load-time").fadeIn(400).css('display','block');
+       }, 500)
+
+    };
 </script>

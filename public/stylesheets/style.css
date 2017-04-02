@@ -157,3 +157,7 @@ a.resort-cards:hover {
   display: inline-block;
   margin-left: 5px;
 }
+
+#load-time  {
+  display:none;
+}

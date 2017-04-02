@@ -146,3 +146,14 @@ a.resort-cards:hover {
 .card-img-top {
   width: 90%;
 }
+
+
+.open-closed  {
+  width: 15px;
+  display: inline-block;
+}
+
+.lift-status  {
+  display: inline-block;
+  margin-left: 5px;
+}

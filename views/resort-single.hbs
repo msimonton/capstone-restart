@@ -93,13 +93,20 @@ $(document).ready(() => {
         success: function(datas) {
           console.log(datas)
             var obj = datas.lifts.status;
+
             var cams = datas.webcams;
             for (var i = 0; i < cams.length; i++) {
-                $('#cam').append('<img src=' + cams[i].image + '>')
+                $('#cam').append('<img src=' + cams[i].image + '><br />')
             }
 
             $.each(obj, function(key, value) {
-                $('#results').append('<p>' + key + ": " + value + '</p>');
+              if(value==='open')  {
+                value='/images/green-open.png'
+              }
+              else{
+                value='/images/red-closed.png'
+              }
+                $('#results').append("<img class='open-closed' src='" + value + "' /><p class='lift-status'>"+' '+key+"</p><br />");
             });
             $('#cam').append('<div>' + datas.weather.conditions + '</div>')
         },

@@ -1,9 +1,6 @@
 
 <h1 onload="checkCookie()">All resorts</h1>
-<div class='container-fluid' id='all-resorts'>
-    <div class="row">
-        <div class="col-lg-2"></div>
-        <div class="col-lg-8">
+        <div class="card-contain">
         {{#each resorts}}
             <div class="card" id='resortList'>
                 <a href='/resorts/single/{{this.id}}'>
@@ -15,7 +12,4 @@
                 </a>
             </div>
     {{/each}}
-    <div class="col-lg-2"></div>
   </div>
-  </div>
-</div>

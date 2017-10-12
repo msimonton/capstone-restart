@@ -91,16 +91,6 @@ a {
 
 /*       single resort        */
 
-.res_image  {
-  width:25%;
-
-}
-
-
-#resort_ratings, #terrain_ratings {
-  display: inline-block;
-  margin: 20px;
-}
 
 
 #resortList2 {
@@ -117,6 +107,15 @@ a {
 
 #all-resorts  {
   text-align: center;
+}
+
+.card-contain {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
 }
 
 .resort-cards {
@@ -145,4 +144,182 @@ a.resort-cards:hover {
 
 .card-img-top {
   width: 90%;
+}
+
+
+.open-closed  {
+  width: 15px;
+  display: inline-block;
+}
+
+.lift-status  {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+#load-time  {
+  display:none;
+}
+
+/*.mySlides {
+  display: none;
+}
+
+.mySlides:first-child  {
+  display: block !important;
+}*/
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+
+
+.
+
+
+
+
+
+
+
+
+            /* Search form  */
+.searcher   {
+  width: 321px;
+  margin: auto;
+  text-align: center;
+}
+
+#resSearchForm  {
+margin: auto;
+}
+
+.range-labels {
+  list-style: none;
+  padding: 0;
+
+}
+
+.range-labels li  {
+  display: inline-block;
+  margin-right: 47px;
+}
+
+.list-last  {
+  margin-right: 0px !important;
+}
+
+
+
+        /* Single Resort Page*/
+
+.single-wrap  {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  min-width: 400px;
+  background-color: grey;
+  text-align: center;
+  padding: 0;
+  padding-bottom: 300px;
+}
+
+.pic-info {
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-right: 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
+  margin-bottom: 40px;
+  border-radius: 5px;
+}
+
+.quick-stats  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 230px;
+  background-color: rgba(0,0,0,.7);
+  color: white;
+  height: 300px;
+  float: right;
+  text-align: left;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+}
+
+
+.resort-bottom  {
+  width: 100%
+}
+
+.about_mnt_loc  {
+  width: 100%;
+  text-align: center;
+  background-color: #ededed;
+}
+
+
+.load-time  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.about_mnt_terrain  {
+  display: inline-block;
+
+}
+
+.ratings_all {
+  display: inline-block;
+}
+
+.lifts-cam {
+  width: 100%;
+}
+
+.webcam {
+  position: relative;
+}
+
+.webcam img  {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left:0;
+  opacity: 1;
+}
+
+#previous-slide, #next-slide {
+display: none;
+position: absolute;
+z-index: 3333;
+}
+
+#previous-slide {
+  top: 50;
+  left: 0;
+}
+
+#next-slide {
+  top: 50;
+  right: 0;
+}
+
+
+.mySlides {
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 1s;
+}
+
+.activeSlide {
+  opacity: 1;
+  z-index: 2;
+}
+
+#results  {
+  display: block;
 }

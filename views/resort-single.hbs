@@ -1,51 +1,45 @@
-<div id='load-time'>
 
-<h1>{{data.resort_name}}</h1>
-<div id='resort-single-data'></div>
+<div class='container-fluid single-wrap'>
+  <h1>{{data.resort_name}}</h1>
+  <div class='row'>
 
-<div id='results'>
-</div>
+    <div class='col-md-8 col-md-offset-2 col-sm-12 pic-info' style="background-image:url('{{data.image}}')">
+      <div class='quick-stats'>
+        Acres: {{data.acres}} <br />
+        Number of Trails: {{data.num_trails}}<br />
+        Number of Lifts: {{data.num_lifts}}<br />
+        Base Elevation: {{data.base_elevation}} ft.<br />
+        Summit Elevation: {{data.summit_elevation}} ft.<br />
+        Verticle Rise: {{data.verticle_rise}} ft.<br />
+      </div>
+    </div>
+  </div>
 
-<h1>{{data.api_path}}</h1>
 
-<div id='cam'>
-</div>
-
-<img src="{{data.image}}" class='res_image' />
 <div class="about_mnt_loc">
-<p>{{data.about}}</p>
-<h2>Location</h2>
-<p>{{data.location}}</p>
-<p>Closest Airports<br />
-{{data.airports}}</p>
+  <h2>About the Mountain</h2>
+    <p>{{data.about}}</p>
+    <h2>Location</h2>
+    <p>{{data.location}}</p>
+    <h3>Closest Airports</h3>
+    <p>{{data.airports}}</p>
 
 </div>
 
-<div class='about_mnt_size'>
-  Acres: {{data.acres}} <br />
-  Number of Trails: {{data.num_trails}}<br />
-  Number of Lifts: {{data.num_lifts}}<br />
-</div>
+<div class='container-fluid resort-bottom'>
+  <div class='row'>
+    <div class='resort-top col-md-6 col-sm-12'>
+    <div class='about_mnt_terrain'>
+      <h2>Terrain</h2>
+      {{data.terrain}}<br />
+      Annual Snowfall: {{data.annual_snowfall}} in.<br />
+      Number of Terrain Parks: {{data.num_terrain_parks}}<br />
+      Cat Skiing: {{data.cat_ski}}<br />
+      Night Ski: {{data.night_ski}}<br />
+      Cross Country Ski: {{data.cross_ski}}<br />
+    </div>
 
-
-<div class="res_single_data">
-  Base Elevation: {{data.base_elevation}} ft.<br />
-  Summit Elevation: {{data.summit_elevation}} ft.<br />
-  Verticle Rise: {{data.verticle_rise}} ft.<br />
-</div>
-
-<div class='about_mnt_terrain'>
-  <h2>Terrain</h2>
-  {{data.terrain}}<br />
-  Annual Snowfall: {{data.annual_snowfall}} in.<br />
-  Number of Terrain Parks: {{data.num_terrain_parks}}<br />
-  Cat Skiing: {{data.cat_ski}}<br />
-  Night Ski: {{data.night_ski}}<br />
-  Cross Country Ski: {{data.cross_ski}}<br />
-</div>
-
-<div id='ratings_all'>
-
+<div class='ratings'>
 <h2>Ratings</h2>
 <div id='terrain_ratings'>
 <h4>Terrain</h4>
@@ -77,17 +71,73 @@ Cost: {{data.cost}}<br />
 <h4>Overall</h4>
 <strong>{{data.overall}}</strong>
 </div>
-
-
-<ol id='ham'>
-    <li id='1'>one</li>
-    <li id='2'>two</li>
-
-</ol>
+</div>
+<div class='results-cam col-md-6 col-sm-12'>
+<div id='results'>
+</div>
+<h2>Webcams</h2>
+<div class='webcam'>
+  <button id='previous-slide'>last</button>
+  <button id='next-slide'>Next</button>
+</div>
 </div>
 
+
+
+
+
+</div>
+</div>
+
+
+
+
+<!-- <div class="w3-content w3-display-container" style="max-width:800px">
+  <div class='prepend'>
+
+  </div>
+
+  <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+    <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+    <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+  </div>
+</div>
+
+ -->
+
+
+
+
+
 <script>
+
 $(document).ready(() => {
+
+  function test() {
+    var slides = document.querySelectorAll('.webcam .mySlides');
+    console.log(slides)
+    var currentSlide = 0;
+    // var slideInterval = setInterval(nextSlide,5000);
+
+    $('#next-slide').click(function nextSlide() {
+      slides[currentSlide].className = 'mySlides';
+      currentSlide = (currentSlide+1)%slides.length;
+      slides[currentSlide].className = 'mySlide activeSlide';
+    })
+    $('#previous-slide').click(function nextSlide() {
+      slides[currentSlide].className = 'mySlides';
+      currentSlide = (currentSlide-1)%slides.length;
+      slides[currentSlide].className = 'mySlide activeSlide';
+    })
+  }
+  setTimeout(test, 8000)
+  $('#previous-slide').delay(8000).fadeIn(500)
+  $('#next-slide').delay(8000).fadeIn(500)
+
+
 
     var liftieUrl = 'https://cors-anywhere.herokuapp.com/http://liftie.info/api/resort/'
     $.ajax({
@@ -99,7 +149,8 @@ $(document).ready(() => {
 
             var cams = datas.webcams;
             for (var i = 0; i < cams.length; i++) {
-                $('#cam').append('<img src=' + cams[i].image + '><br />')
+                $('.webcam').append('<img class ="mySlides slide'+[i]+'"src="' + cams[i].image + '"style="width:100%" />')
+                $('.webcam img:first-child').addClass('activeSlide')
             }
 
             $.each(obj, function(key, value) {
@@ -109,7 +160,7 @@ $(document).ready(() => {
               else{
                 value='/images/red-closed.png'
               }
-                $('#results').append("<img class='open-closed' src='" + value + "' /><p class='lift-status'>"+' '+key+"</p><br />");
+                $('#results').prepend("<img class='open-closed' src='" + value + "' /><p class='lift-status'>"+' '+key+"</p><br />");
             });
             $('#cam').append('<div>' + datas.weather.conditions + '</div>')
         },
@@ -117,16 +168,54 @@ $(document).ready(() => {
             console.log(err)
         }
       })
-    })
+
+
+})
 
     // window.onload = function(){
     //        $("#load-time").fadeIn(3000)
     // };
 
-    window.onload = function(){
-       setTimeout(function(){
-           $("#load-time").fadeIn(400).css('display','block');
-       }, 500)
+    // window.onload = function(){
+    //    setTimeout(function(){
+    //        $("#load-time").fadeIn(400).css('display','block');
+    //    }, 500)
+    //
+    // };
 
-    };
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    // var slideIndex = 1;
+    // showDivs(slideIndex);
+    //
+    // function plusDivs(n) {
+    //   showDivs(slideIndex += n);
+    // }
+    //
+    // function currentDiv(n) {
+    //   showDivs(slideIndex = n);
+    // }
+    //
+    // function showDivs(n) {
+    //   var i;
+    //   var x = document.getElementsByClassName("mySlides");
+    //   var dots = document.getElementsByClassName("demo");
+    //   if (n > x.length) {slideIndex = 1}
+    //   if (n < 1) {slideIndex = x.length}
+    //   for (i = 0; i < x.length; i++) {
+    //      x[i].style.display = "none";
+    //   }
+    //   for (i = 0; i < dots.length; i++) {
+    //      dots[i].className = dots[i].className.replace(" w3-white", "");
+    //   }
+    //   x[slideIndex-1].style.display = "block";
+    //   dots[slideIndex-1].className += " w3-white";
+    // }
+
 </script>

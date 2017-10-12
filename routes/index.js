@@ -40,7 +40,7 @@ var knex = require('../db/knex_config');
 
 
 router.get('/', function(req, res, next) {
-  res.render('index');
+  res.render('index.hbs');
 });
 
 router.get('/auth/google', auth.passport.authenticate('google', {

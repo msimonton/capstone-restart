@@ -1,9 +1,9 @@
 'use strict'
-var express = require('express');
-var router = express.Router();
-var query = require('../db/query.js')
-var auth = require('../passport.js')
-var knex = require('../db/knex_config');
+const express = require('express');
+const router = express.Router();
+const query = require('../db/query.js')
+const auth = require('../passport.js')
+const knex = require('../db/knex_config');
 
 /* GET home page. */
 // function Resorts()  {

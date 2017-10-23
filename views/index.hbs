@@ -1,24 +1,54 @@
 
 <div class="container-fluid" id="index-container">
-  <div class='container-fluid' id="overlay">
-  <h1>{{title}}</h1>
-  <input type="button" onclick="location.href='/auth/google';" value="sign in" />
-  <a href="/welcome">WELCOME</a>
-  <a href="/resorts/all">RESORTS</a>
-  <a href="/map">MAPS</a>
-  <a href="/ham">TESTER</a>
-  <a href='/search'>Search</a>
-  <ul id='resortList'>
-    {{#each resDetails}}
-    <a href='/resorts/test'>
-       <li class='resortList'>{{this.resort_id}}</li>
+    <div class='row main-top'>
+      <div id='your-trip'><div><p>It's your ski vacation, don't settle for anything less than the perfect resort</p></div></div>
+      <div class='main-pics'>
+        <!-- <img id='vail-pow' src='images/vail-pow.jpg'> -->
+      </div>
+
+    </div>
+
+
+<div class='row' id='overview'>
+  <div class='col-md-8 col-md-offset-2 col-sm-12' id='overview-blurb-wrap'>
+    <h1 class='header'>Let us find your perfect ski destination</h1>
+    <p id='main-blurb'>Planning a ski trip can be a daunting task, especially if you have your sights set on Colorado. With 27 ski areas all ranging in terrain, snow quality, price and countless other factors, choosing which resort best fits your ideal ski vacation is can seem near impossible. </br></br> Luckily for you, that's why we're here. Using our search tool, we can help narrow down your options based on what's important to you and what you would like to get out of your trip.</p>
+  </div>
+</div>
+
+
+<a class='search-link' href='/search'>
+<div class='main-search-wrap'>
+  <div class='search-pic'></div>
+  <div class='search-blurb'><div><p>Come let us help</br> you find your resort</p></div></div>
+
+</div>
+</a>
+
+<div class='resort-browse'>
+  <h2>Check out our resorts to get information about lift status', terrain, activities, and weather.</h2>
+  <div class='resort-browse-wrap'>
+    {{#each resorts}}
+    <a class='resort-link-home' href='/resorts/single/{{this.id}}'><h3>{{this.resort_name}}</h3></a>
     {{/each}}
-  </ul>
+  </div>
+
+
+
+
 </div>
+
+
+
+<!-- <div id='view-resorts-wrap'>
+  <div id='main-pics-search'>
+    <div id='view-resorts-blurb'><div><p>Begin your search here</p></div></div>
+
+  </div>
+
+</div> -->
+
 </div>
-
-
-
 
 
 <!--  AIzaSyB1GeHyNDCygwnJuNa6_dWP4LhKMmyjwkA   google api key     -->

@@ -73,6 +73,7 @@ Cost: {{data.cost}}<br />
 </div>
 </div>
 <div class='results-cam col-md-6 col-sm-12'>
+  <div id='forcast'></div>
 <div id='results'>
 </div>
 <h2>Webcams</h2>
@@ -146,6 +147,12 @@ $(document).ready(() => {
         success: function(datas) {
           console.log(datas)
             var obj = datas.lifts.status;
+            console.log(datas.weather.snow)
+            var snow= datas.weather.snow
+            if(datas.weather.snow==="") {
+              snow=0
+            }
+
 
             var cams = datas.webcams;
             for (var i = 0; i < cams.length; i++) {
@@ -162,7 +169,7 @@ $(document).ready(() => {
               }
                 $('#results').prepend("<img class='open-closed' src='" + value + "' /><p class='lift-status'>"+' '+key+"</p><br />");
             });
-            $('#cam').append('<div>' + datas.weather.conditions + '</div>')
+            $('#forcast').append('<h2>Forcast</h2><div >' + datas.weather.conditions + '</div><p>High: '+datas.weather.temperature.max+'°</p><p>New Snow: '+snow+'"</p>')
         },
         error: function(err) {
             console.log(err)

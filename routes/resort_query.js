@@ -1,13 +1,9 @@
 'use strict'
-var express = require('express');
-var router = express.Router();
-var query = require('../db/query.js')
-var auth = require('../passport.js')
-var knex = require('../db/knex_config');
-// var mainJS = require('../public/javascripts/main.js')
-
-
-
+const express = require('express');
+const router = express.Router();
+const query = require('../db/query.js')
+const auth = require('../passport.js')
+const knex = require('../db/knex_config');
 
 
 
@@ -44,19 +40,6 @@ router.get('/all', function(req, res, next){
 
   })
 })
-
-// router.get('/single/:id', function(req, res, next){
-//   var detRes = query.getDetailsByData(req.params.id)
-//   var dataRes = query.resortById(req.params.id)
-//   Promise.all([dataRes, detRes])
-//   .then(function(data)  {
-//     res.render('resort-single', {data:data})
-//   })
-//   .catch((err) => {
-//   console.error('Error')
-//   next(err)
-// })
-// })
 
 
 
@@ -100,6 +83,9 @@ router.get('/search-results/:id1/:id2/:id3/:id4/:id5', function (req, res, next)
   })
 })
 
+
+      // This function multiplies the results of each input from the search form by the related rating of each of the resorts in that field. It keeps an overall total for each resort and returns the resorts with the highest overall count. By multiplying each resorts ratings by the "importance" level inputed for that specific field, the resorts with a higher ratings in that field recieve more 'points' towards their overal total.
+
   router.post('/search-results', function (req, res, next) {
     query.Resorts()
     .then(function(searchResults) {
@@ -135,18 +121,5 @@ router.get('/search-results/:id1/:id2/:id3/:id4/:id5', function (req, res, next)
   })
 })
 
-
-
-
-
-
-/* GET home page. */
-// router.get('/find-resort', function(req, res){
-//
-// query.findAllResorts().select('resort_name').then(function(result){
-//   res.json(result);
-//   // console.log(result)
-//   });
-// });
 
 module.exports = router;

@@ -1,15 +1,18 @@
-
+<div class='all-resorts-wrap'>
 <h1 onload="checkCookie()">All resorts</h1>
         <div class="card-contain">
         {{#each resorts}}
-            <div class="card" id='resortList'>
+            <div class="all-res-cards">
                 <a href='/resorts/single/{{this.id}}'>
-                    <img class="card-img-top" id="card-pic"src="{{this.image}}" />
-                    <div class="card-block">
-                        <h4 class="card-title">{{this.resort_name}}</h4>
-                        <h3 class="card-text">Overall Rating: {{this.overall}}/10</h3>
+                  <div class='card-tops'>
+                      <img class="card-img" src="{{this.image}}" />
+                    </div>
+                    <div class="card-blocks">
+                        <h4 class="card-titles">{{this.resort_name}}</h4>
+                        <h3 class="card-rating">Overall Rating: {{this.overall}}/10</h3>
                     </div>
                 </a>
             </div>
     {{/each}}
   </div>
+</div>

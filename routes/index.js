@@ -1,9 +1,9 @@
 'use strict'
-var express = require('express');
-var router = express.Router();
-var query = require('../db/query.js')
-var auth = require('../passport.js')
-var knex = require('../db/knex_config');
+const express = require('express');
+const router = express.Router();
+const query = require('../db/query.js')
+const auth = require('../passport.js')
+const knex = require('../db/knex_config');
 
 /* GET home page. */
 // function Resorts()  {
@@ -40,8 +40,13 @@ var knex = require('../db/knex_config');
 
 
 router.get('/', function(req, res, next) {
-  res.render('index.hbs');
-});
+    knex('resort_data')
+    .join('resort_details', 'resort_data.id', 'resort_details.resort_id').select()
+    .then(function(resorts){
+      res.render('index', {resorts: resorts})
+
+    })
+  })
 
 router.get('/auth/google', auth.passport.authenticate('google', {
     scope: [

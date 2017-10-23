@@ -6,60 +6,263 @@ body {
   background-position: center;
   background-size: contain;
   background-attachment: scroll;*/
-}
-.jumbotron-fluid  {
-  background-image: url('../images/COSummitbannerbreckphoto1.jpg');
-  background-repeat: no-repeat;
-  background-position:bottom;
-  background-color: #696969;
-  background-size: contain;
-  box-shadow: inset 1px -40px 70px black;
-
-  width:100%;
-  height:19vh;
-  margin-top: 20px;
-}
-
-#jumbo-div  {
 
 }
 
-#jumbotronPic {
-  border-radius: 4px;
+.body-wrap  {
+  margin-top: 100px;
+}
+
+
+
+* {
+  font-family: 'Quicksand', sans-serif;
+}
+
+
+            /*    Navbar    */
+
+#nav-wrap  {
+  position:fixed;
+  top: 0;
+  background-color: #525252;
   width: 100%;
-  margin-top: -15px;
-  text-align: center;
+  height: 100px;
+  z-index: 555555;
 }
+
+.main-nav   {
+  position: absolute;
+  bottom: 0;
+}
+
+.nav-brand   {
+  color: white;
+  display: inline-block;
+  font-size: 30px;
+}
+
+.nav-brand:hover  {
+  color: white;
+}
+
+.navbar {
+  list-style: none;
+  display: inline-block;
+  margin: 0;
+}
+
+.navbar > li {
+  display: inline-block;
+  padding: 10px 15px 10px 15px;
+}
+
+.navbar > li > a {
+  color: white;
+}
+
 
 #index-container  {
-  background-image: url("http://www.gobreck.com/sites/default/files/styles/secondary_hero/public/town-3_0.jpg?itok=d-_i3Xgd");
-  background-repeat: no-repeat;
-  background-color: #bababa;
   width: 100%;
-  height: 100vh;
-  margin-top: 40px;
+  padding: 0;
+}
+
+
+.main-top {
+  margin: 0;
+  width: 100%;
+  min-height: 450px;
+  position: relative;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+#your-trip  {
+position: absolute;
+width: 45%;
+height: 100%;
+top: 0;
+left: 0;
+float: left;
+display: flex;
+text-align: center;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+padding: 0px;
+}
+
+
+#your-trip > div > p  {
+  padding: 40px;
+  font-size: 28px;
+}
+
+
+
+.main-pics  {
+  position: absolute;
+  width: 55%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  padding: 0;
+  min-height: 350px;
+  background-image: url('../images/vail-pow.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+}
+
+#vail-pow {
+  width: 100%;
+
+
+}
+
+#overview {
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: white;
+  text-shadow: 1px 1px black;
+
+
+}
+
+#main-blurb {
+  text-align: justify;
+  text-align-last: center;
+  font-size: 18px;
+}
+
+#overview-blurb-wrap  {
+  padding: 20px;
+  border-radius: 4px;
+  /*background-color: #a7bbd7;*/
+  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 -4px 8px 0 rgba(0, 0, 0, 0.2), 0 -6px 20px 0 rgba(0, 0, 0, 0.19);*/
+}
+
+
+
+.main-search-wrap  {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  background-color: white;
+  height: 350px;
+  overflow: hidden;
+  margin-bottom: 50px;
+  transition: box-shadow .3s;
+  transition-timing-function: ease-in-out;
+
+}
+
+.main-search-wrap:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 -4px 8px 0 rgba(0, 0, 0, 0.2), 0 -6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+}
+
+
+.search-pic{
+  width: 65%;
+  top: 0;
+  left: 0;
+  padding: 0;
+  min-height: 350px;
+  background-image: url('../images/ski-fam.jpg');
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.search-blurb {
+  position: absolute;
+  width: 35%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   padding: 0px;
 }
 
-#overlay  {
-  background-color: rgb(0, 0, 0, .2);
-  box-shadow: inset 240px 240px 400px black;
-  height: 100vh;
-  width: 100vw;
-  margin-left: 0px;
-  margin-left: 0px;
+.search-blurb > div > p {
+  font-family: inherit;
+  font-size: 28px;
+  color: black;
+}
+
+.searcher:hover .search-blurb > div > p   {
+  color: black;
 }
 
 
-a {
-  color: #00B7FF;
+
+
+.resort-browse  {
+  margin: auto;
+  width: 80%;
 }
 
-.card {
+.resort-browse > h2 {
+  margin: auto;
+  margin-bottom: 20px;
+  color: white;
+  width: 800px;
+  text-align: center;
+}
+
+.resort-browse-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.resort-link-home  {
+  color: black;
+  width: 200px;
+  height: 60px;
+  background-color: white;
+  text-align: center;
+  transition: box-shadow .2s;
+  margin:5px 10px 5px 10px;
+
+}
+
+.resort-link-home:hover {
+  color: black;
+  box-shadow: inset 0 0 20px #566ab1;
+  text-decoration: none;
+}
+
+.resort-link-home > h3  {
+  margin-top: 17px;
+}
+
+
+
+
+
+
+
+
+
+
+/*.card {
   margin-top:20px;
   margin-left: 20px;
   width: 27%;
-}
+}*/
 
 #map {
   height: 400px;
@@ -77,11 +280,6 @@ a {
   color:white;
 }
 
-.about_mnt_loc  {
-  background-color: rgb(193, 193, 193);
-  width: 70%;
-  text-align:justify;
-}
 
 
 
@@ -93,19 +291,9 @@ a {
 
 
 
-#resortList2 {
-  display: block;
-  margin:auto;
-  margin-bottom: 30px;
-  margin-top: 20px;
-  width: auto;
-  max-width: 600px;
-  min-width: 200px;
-  text-align: center;
-}
 
 
-#all-resorts  {
+.all-resorts-wrap  {
   text-align: center;
 }
 
@@ -118,33 +306,73 @@ a {
   justify-content: center;
 }
 
-.resort-cards {
-  text-decoration: none;
+.all-res-cards  {
+  position: relative;
+  width: 300px;
+  margin: 10px 10px 10px 10px;
+  background-color: white;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
+  transition: box-shadow .08s;
+  border-radius: 3px;
+
+}
+
+.all-res-cards > a  {
+  /*text-decoration: none;*/
+}
+
+.all-res-cards:hover  {
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.7), 0 10px 30px 0 rgba(0, 0, 0, 0.69);
+}
+
+
+.card-tops {
+  overflow: hidden;
+  height: 250px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.card-img {
+  width: 150%;
+}
+
+.card-blocks  {
+  background-color: rgba(255,255,255,.6);
+  position: absolute;
+  top: 0;
+  left: 50;
+  width: 100%;
+  display: block;
+  transition: background-color .08s;
+}
+
+.all-res-cards:hover .card-blocks {
+  background-color: rgba(255, 255, 255, .85);
+
+}
+
+.card-titles  {
+  color: black;;
+  font-size: 30px;
+}
+
+.card-rating  {
   color: black;
+  font-size: 17px;
 }
 
-.card-title {
-  margin-top: 15px;
-  font-size: 40px;
-}
 
-.card {
-  margin-top: 10px;
-  text-decoration: none;
 
-}
-.card:hover {
-text-decoration: none !important;
-}
 
-a.resort-cards:hover {
-  text-decoration: none;
-  color: inherit;
-}
 
-.card-img-top {
-  width: 90%;
-}
+
+
+
+
+
+
 
 
 .open-closed  {
@@ -182,10 +410,18 @@ a.resort-cards:hover {
 
 
             /* Search form  */
+
+
+
+
 .searcher   {
   width: 321px;
   margin: auto;
   text-align: center;
+}
+
+.searcher input {
+  width: 320px;
 }
 
 #resSearchForm  {
@@ -254,6 +490,7 @@ margin: auto;
 }
 
 .about_mnt_loc  {
+  text-align:justify;
   width: 100%;
   text-align: center;
   background-color: #ededed;
@@ -266,6 +503,7 @@ margin: auto;
   justify-content: center;
 
 }
+
 
 .about_mnt_terrain  {
   display: inline-block;
@@ -293,8 +531,8 @@ margin: auto;
 }
 
 #previous-slide, #next-slide {
-display: none;
 position: absolute;
+display: none;
 z-index: 3333;
 }
 
@@ -322,4 +560,106 @@ z-index: 3333;
 
 #results  {
   display: block;
+}
+
+
+.ranges {
+  width: 320px;
+  margin: auto;
+}
+
+#modal-open {
+  padding: 5px 8px 5px 8px;
+  border: 2px solid white;
+  border-radius: 5px;
+  width: 140px;
+  margin: auto;
+}
+
+#modal-open:hover{
+  cursor: pointer;
+}
+
+
+
+.btn  {
+ background-color: grey;
+
+}
+
+.btn:hover  {
+  cursor: pointer;
+}
+
+#resSearchForm  {
+  position: relative;
+  text-align: center;
+  margin: auto;
+
+}
+
+.modal-fade {
+  background-color: rgba(0,0,0,.8);
+  transition: background-color .3s;
+}
+
+
+
+.formFirst, .formSecond, .formThird  {
+  display: none;
+  margin: auto;
+  background-color: white;
+  width: 500px;
+  color: black;
+  position: absolute;
+  top: 0px;
+  left: 30%;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.modal-close  {
+  float: right;
+  background-color: grey;
+  padding: 5px 8px 5px 8px;
+  border-radius: 5px;
+  color: white;
+}
+
+.modal-close:hover{
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+        /* Search Results  */
+
+.results-wrap   {
+  text-align: center;
+}
+
+.card   {
+
+}
+
+.resort-card  {
+  text-decoration: none;
+
+}
+
+.resort-card:hover  {
+  text-decoration: none;
+}
+
+.result-resort  {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
+    padding: 0;
+}
+
+#quick-stats  {
+  text-decoration: none;
 }

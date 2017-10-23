@@ -1,12 +1,12 @@
 <div  id='all-resorts'>
   <h1>Our top resorts we picked for you<br /> based on your preferences</h1>
 
+    <div class='results-wrap container-fluid'>
         {{#each searchResults}}
-            <div class='resID' id='{{this.api_path}}' href='/resorts/single/{{this.id}}'>
+            <div class='col-md-6 col-md-offset-3 col-sm-12 result-resort' id='{{this.api_path}}' href='/resorts/single/{{this.id}}'>
 
-    
 
-            <div class="card" id='resortList resortList2' >
+            <div class="card">
               <a class='resort-cards'href='/resorts/single/{{this.id}}'>
                   <h4 class="card-title">{{this.resort_name}}</h4>
                     <img class="card-img-top" id="card-pic"src="{{this.image}}" />
@@ -21,4 +21,5 @@
             </div>
           </div>
     {{/each}}
+</div>
 </div>

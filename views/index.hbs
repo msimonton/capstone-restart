@@ -20,10 +20,23 @@
 <a class='search-link' href='/search'>
 <div class='main-search-wrap'>
   <div class='search-pic'></div>
-  <div class='search-blurb'><div><p>Come find</br>your perfect resort</p></div></div>
+  <div class='search-blurb'><div><p>Come let us help</br> you find your resort</p></div></div>
 
 </div>
 </a>
+
+<div class='resort-browse'>
+  <h2>Check out our resorts to get information about lift status', terrain, activities, and weather.</h2>
+  <div class='resort-browse-wrap'>
+    {{#each resorts}}
+    <a class='resort-link-home' href='/resorts/single/{{this.id}}'><h3>{{this.resort_name}}</h3></a>
+    {{/each}}
+  </div>
+
+
+
+
+</div>
 
 
 

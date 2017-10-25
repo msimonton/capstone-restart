@@ -5,9 +5,7 @@ module.exports = {
 
   development: {
     client: 'postgres',
-    connection: {
-      database: 'snowgo'
-    }
+    connection: process.env.DATABASE_URL
   },
 
   production: {

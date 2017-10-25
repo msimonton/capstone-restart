@@ -1,228 +1,237 @@
-<h2>Lets us know what you want out of your trip</h2>
-<p id='form-about'>We want to know what is important to you when taking a ski vacation to help find the perfect resort for your trip. Take our short survey so we can get a better understanding about what you're looking for by rating your trip preferences.</p>
-
 <form id='resSearchForm'>
 
-  <div id='modal-open'>Take Survey</div>
+  <div class='modal-wrap'>
+    <div class='formFirst'>
+      <div class='modal-close'>X</div>
+      <p class='form-guide'>Rate each section based on importance to you</p>
 
 
-<div class='formFirst'>
-  <div class='modal-close'>X</div>
-  <p class='form-guide'>Rate each section based on importance to you</p>
+      <div class='searcher'>
+        <label for='beginner'>Beginner Terrain</label>
+        <input class='ranges' id="begInput" name='begInput' value='4' type="range" min="0" max="5" step="1" />
+        <ul class='range-labels'>
+          <li>0</li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li class='list-last'>5</li>
+        </ul>
+      </div>
+      <div class='searcher'>
+        <label for=''>Intermediate Terrain</label>
+        <input class='ranges' id="intInput" name='intInput' type="range" min="0" max="5" step="1" />
+        <ul class='range-labels'>
+          <li>0</li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li class='list-last'>5</li>
+        </ul>
+      </div>
+      <div class='searcher'>
+        <label for=''>Advanced Terrain</label>
+        <input class='ranges' id="advInput" name='advInput' type="range" min="0" max="5" step="1" />
+        <ul class='range-labels'>
+          <li>0</li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li class='list-last'>5</li>
+        </ul>
+      </div>
+      <div class='searcher'>
+        <label for=''>Expert Terrain</label>
+        <input class='ranges' id="expInput" name='expInput' type="range" min="0" max="5" step="1" />
+        <ul class='range-labels'>
+          <li>0</li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li class='list-last'>5</li>
+        </ul>
+      </div>
 
 
-  <div class='searcher'>
-    <label for='beginner'>Beginner Terrain</label>
-    <input class='ranges' id="begInput" name='begInput' value='4' type="range" min="0" max="5" step="1" />
-    <ul class='range-labels'>
-      <li>0</li>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li class='list-last'>5</li>
-    </ul>
-</div>
-  <div class='searcher'>
-    <label for=''>Intermediate Terrain</label>
-    <input class='ranges' id="intInput" name='intInput' type="range" min="0" max="5" step="1" />
-    <ul class='range-labels'>
-      <li>0</li>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li class='list-last'>5</li>
-    </ul>
-</div>
-  <div class='searcher'>
-    <label for=''>Advanced Terrain</label>
-    <input class='ranges' id="advInput" name='advInput' type="range" min="0" max="5" step="1" />
-    <ul class='range-labels'>
-      <li>0</li>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li class='list-last'>5</li>
-    </ul>
-</div>
-  <div class='searcher'>
-    <label for=''>Expert Terrain</label>
-    <input class='ranges' id="expInput" name='expInput' type="range" min="0" max="5" step="1" />
-    <ul class='range-labels'>
-      <li>0</li>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li class='list-last'>5</li>
-    </ul>
-</div>
+      <p class='range-guide'>"0" = Low Importance "5" = High Importance</p>
 
+      <div class='btn' id='next-first'>Next</div>
+    </div>
 
-<p class='range-guide'>"0" = Low Importance "5" = High Importance</p>
+    <div class='formSecond'>
+      <div class='modal-close'>X</div>
+      <p class='form-guide'>Rate each section based on importance to you</p>
 
-<div class='btn' id='next-first'>Next 1</div>
-</div>
+      <div class='searcher'>
+        <label for=''>Tree Skiing</label>
+        <input class='ranges' id="treeInput" name='treeInput' type="range" min="0" max="5" step="1" />
+        <ul class='range-labels'>
+          <li>0</li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li class='list-last'>5</li>
+        </ul>
+      </div>
+      <div class='searcher'>
+        <label for=''>Off Piste Terrain (Ungroomed runs with more extreme terrain or moguls)</label>
+        <input class='ranges' id="pisteInput" name='pisteInput' type="range" min="0" max="5" step="1" />
+        <ul class='range-labels'>
+          <li>0</li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li class='list-last'>5</li>
+        </ul>
 
-<div class='formSecond'>
-  <div class='modal-close'>X</div>
-  <p class='form-guide'>Rate each section based on importance to you</p>
+      </div>
+      <div class='searcher'>
+        <label for=''>Snow Quality</label>
+        <input class='ranges' id="snowInput" name='snowInput' type="range" min="0" max="5" step="1" />
+        <ul class='range-labels'>
+          <li>0</li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li class='list-last'>5</li>
+        </ul>
+      </div>
 
-  <div class='searcher'>
-    <label for=''>Tree Skiing</label>
-    <input class='ranges' id="treeInput" name='treeInput' type="range" min="0" max="5" step="1" />
-    <ul class='range-labels'>
-      <li>0</li>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li class='list-last'>5</li>
-    </ul>
-</div>
-  <div class='searcher'>
-    <label for=''>Off Piste Terrain (Ungroomed runs with more extreme terrain or moguls)</label>
-    <input class='ranges' id="pisteInput" name='pisteInput' type="range" min="0" max="5" step="1" />
-    <ul class='range-labels'>
-      <li>0</li>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li class='list-last'>5</li>
-    </ul>
-
-</div>
-  <div class='searcher'>
-    <label for=''>Snow Quality</label>
-    <input class='ranges' id="snowInput" name='snowInput' type="range" min="0" max="5" step="1" />
-    <ul class='range-labels'>
-      <li>0</li>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li class='list-last'>5</li>
-    </ul>
-</div>
-
-  <div class='searcher'>
-    <label for=''>Terrain Park</label>
-    <input class='ranges' id="terrInput" name='terrInput' type="range" min="0" max="5" step="1" />
-    <ul class='range-labels'>
-      <li>0</li>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li class='list-last'>5</li>
-    </ul>
-</div>
-<p class='range-guide'>"0" = Low Importance "5" = High Importance</p>
-<div class='btn' id='last-second'>Previous 2</div>
-<div class='btn' id='next-second'>Next 2</div>
-</div>
+      <div class='searcher'>
+        <label for=''>Terrain Park</label>
+        <input class='ranges' id="terrInput" name='terrInput' type="range" min="0" max="5" step="1" />
+        <ul class='range-labels'>
+          <li>0</li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li class='list-last'>5</li>
+        </ul>
+      </div>
+      <p class='range-guide'>"0" = Low Importance "5" = High Importance</p>
+      <div class='btn' id='last-second'>Previous</div>
+      <div class='btn' id='next-second'>Next</div>
+    </div>
 
 
 
 
-<div class='formThird'>
-  <div class='modal-close'>X</div>
-  <p class='form-guide'>Rate each section based on importance to you</p>
-<div class='searcher'>
-  <label for=''>Uncrowded</label>
-  <input class='ranges' id="crowdInput" name='crowdInput' type="range" min="0" max="5" step="1" />
-  <ul class='range-labels'>
-    <li>0</li>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li class='list-last'>5</li>
-  </ul>
-</div>
+    <div class='formThird'>
+      <div class='modal-close'>X</div>
+      <p class='form-guide'>Rate each section based on importance to you</p>
+      <div class='searcher'>
+        <label for=''>Uncrowded</label>
+        <input class='ranges' id="crowdInput" name='crowdInput' type="range" min="0" max="5" step="1" />
+        <ul class='range-labels'>
+          <li>0</li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li class='list-last'>5</li>
+        </ul>
+      </div>
 
-  <div class='searcher'>
-    <label for=''>Family Friendly</label>
-    <input class='ranges' id="famInput" name='famInput' type="range" min="0" max="5" step="1" />
-    <ul class='range-labels'>
-      <li>0</li>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li class='list-last'>5</li>
-    </ul>
-</div>
+      <div class='searcher'>
+        <label for=''>Family Friendly</label>
+        <input class='ranges' id="famInput" name='famInput' type="range" min="0" max="5" step="1" />
+        <ul class='range-labels'>
+          <li>0</li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li class='list-last'>5</li>
+        </ul>
+      </div>
 
-  <div class='searcher'>
-    <label for=''>Nightlife</label>
-    <input class='ranges' id="nightInput" name='nightInput' type="range" min="0" max="5" step="1" />
-    <ul class='range-labels'>
-      <li>0</li>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li class='list-last'>5</li>
-    </ul>
-</div>
+      <div class='searcher'>
+        <label for=''>Nightlife</label>
+        <input class='ranges' id="nightInput" name='nightInput' type="range" min="0" max="5" step="1" />
+        <ul class='range-labels'>
+          <li>0</li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li class='list-last'>5</li>
+        </ul>
+      </div>
 
-  <div class='searcher'>
-    <label for=''>Ski-in Ski-out</label>
-    <input class='ranges' id="skiinInput" name='skiinInput' type="range" min="0" max="5" step="1" />
-    <ul class='range-labels'>
-      <li>0</li>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li class='list-last'>5</li>
-    </ul>
+      <div class='searcher'>
+        <label for=''>Ski-in Ski-out</label>
+        <input class='ranges' id="skiinInput" name='skiinInput' type="range" min="0" max="5" step="1" />
+        <ul class='range-labels'>
+          <li>0</li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li class='list-last'>5</li>
+        </ul>
 
-</div>
-  <div class='searcher'>
-    <label for=''>Apres ski (After ski drinks and food)</label>
-    <input class='ranges' id="apresInput" name='apresInput' type="range" min="0" max="5" step="1" />
-    <ul class='range-labels'>
-      <li>0</li>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li class='list-last'>5</li>
-    </ul>
-</div>
-  <div class='searcher'>
-    <label for=''>Cost</label>
-    <input class='ranges' id="costInput" name='costInput' type="range" min="0" max="5" step="1" />
-    <ul class='range-labels'>
-      <li>0</li>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li class='list-last'>5</li>
-    </ul>
-</div>
-<p class='range-guide'>"0" = Low Importance "5" = High Importance</p>
-<div class='btn' id='last-third'>Previous 3</div>
-<button class='btn' type="submit" value='submit'>Find Resorts</button>
-</div>
+      </div>
+      <div class='searcher'>
+        <label for=''>Apres ski (After ski drinks and food)</label>
+        <input class='ranges' id="apresInput" name='apresInput' type="range" min="0" max="5" step="1" />
+        <ul class='range-labels'>
+          <li>0</li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li class='list-last'>5</li>
+        </ul>
+      </div>
+      <div class='searcher'>
+        <label for='cost'>Cost</label>
+        <input class='ranges' id="costInput" name='costInput' type="range" min="0" max="5" step="1" />
+        <ul class='range-labels'>
+          <li>0</li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li class='list-last'>5</li>
+        </ul>
+      </div>
+      <p class='range-guide'>"0" = Low Importance "5" = High Importance</p>
+      <div class='btn' id='last-third'>Previous</div>
+      <button class='btn' type="submit" value='submit'>Find Resorts</button>
+    </div>
+  </div>
 
 
 
 </form>
+<div class='search-page-wrap'>
+<h2 id='search-header'>Lets us know what you want out of your trip</h2>
+<p id='form-about'>We want to know what is important to you when taking a ski vacation to help find the perfect resort for your trip. Take our short survey so we can get a better understanding about what you're looking for by rating your trip preferences.</p>
+  <div id='modal-open'>Begin Search</div>
 
 
+
+<div class='spanner container-fluid'>
+  <div class='col-md-4 col-sm-4' id='spanner-one'></div>
+  <div class='col-md-4 col-sm-4' id='spanner-two'></div>
+  <div class='col-md-4 col-sm-4' id='spanner-three'></div>
+</div>
+
+</div>
 <script>
 $(document).ready(()  =>{
   $('#modal-open').click(function()  {
+    $('.modal-wrap').fadeIn(500)
     $('.formFirst').fadeIn(500)
     $('body').addClass('modal-fade')
-    $('#modal-open').fadeOut(200)
+    // $('#modal-open').fadeOut(200)
 
   })
 
@@ -247,6 +256,7 @@ $(document).ready(()  =>{
   })
 
   $('.modal-close').click(function()  {
+    $('.modal-wrap').fadeOut(400)
     $('.formFirst').fadeOut(400)
     $('.formSecond').fadeOut(400)
     $('.formThird').fadeOut(400)

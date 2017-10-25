@@ -38,8 +38,12 @@ body {
 
 .nav-brand   {
   color: white;
+  position: absolute;
   display: inline-block;
-  font-size: 30px;
+  font-size: 60px;
+  top: 24px;
+  right: 100px;
+
 }
 
 .nav-brand:hover  {
@@ -55,6 +59,7 @@ body {
 .navbar > li {
   display: inline-block;
   padding: 10px 15px 10px 15px;
+  font-size: 17px;
 }
 
 .navbar > li > a {
@@ -219,6 +224,7 @@ padding: 0px;
   color: white;
   width: 800px;
   text-align: center;
+  font-size: 24px;
 }
 
 .resort-browse-wrap {
@@ -411,6 +417,138 @@ padding: 0px;
 
             /* Search form  */
 
+.search-page-wrap {
+  width: 100%;
+}
+
+#search-header  {
+  margin-top: 150px;
+  text-align: center;
+  color: white;
+  font-size: 37px;
+
+}
+
+#form-about {
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  text-align: center;
+  color: white;
+  width: 80%;
+  font-size: 20px;
+}
+
+
+#modal-open {
+  padding: 5px 8px 5px 8px;
+  border: 2px solid white;
+  border-radius: 5px;
+  width: 140px;
+  margin: auto;
+  margin-bottom: 50px;
+  text-align: center;
+  background-color: white;
+  font-size: 18px;
+}
+
+#modal-open:hover{
+  cursor: pointer;
+}
+
+.modal-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 94vh;
+  background-color: rgba(0,0,0,.7);
+  display: none;
+  z-index: 4444;
+}
+
+.form-guide {
+  font-size: 22px;
+  width: 300px;
+  margin: auto;
+  font-weight: bold;
+}
+
+.form-guide::after  {
+  display: block;
+  border-bottom: 1px solid black;
+  content: '';
+  width: 200px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 18px;
+}
+
+
+
+.btn  {
+  color: white;
+ background-color: #9dafc8 ;
+ border: 1px solid black;
+ /*box-shadow: inset 0 0 4px black;*/
+
+
+}
+
+.btn:hover  {
+  color: white;
+  cursor: pointer;
+  box-shadow: inset 0 0 10px #2b5069;
+}
+
+#resSearchForm  {
+  position: relative;
+  text-align: center;
+  margin: auto;
+
+}
+
+.modal-fade {
+  background-color: rgba(0,0,0,.8);
+  transition: background-color .3s;
+}
+
+
+
+.formFirst, .formSecond, .formThird  {
+  display: none;
+  margin: auto;
+  background-color: white;
+  width: 560px;
+  color: black;
+  position: absolute;
+  top: 0px;
+  left: 30%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19), 0 -4px 8px 0 rgba(255, 255, 255, 0.2), 0 -6px 20px 0 rgba(255, 255, 255, 0.19);
+}
+
+.modal-close  {
+  float: right;
+  background-color: #be3535;
+  padding: 5px 8px 5px 8px;
+  border-radius: 5px;
+  color: white;
+}
+
+.modal-close:hover{
+  cursor: pointer;
+}
+
+
+
+
+
+
 
 
 
@@ -443,6 +581,35 @@ margin: auto;
   margin-right: 0px !important;
 }
 
+.spanner  {
+  width: 100%;
+  padding: 0;
+  text-align: center;
+
+}
+
+.spanner > div {
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  margin: 0;
+  z-index: -10;
+}
+
+#spanner-one  {
+  background-image: url('../images/snowboard.jpg');
+}
+
+#spanner-two  {
+  background-image: url('../images/food.jpg');
+}
+
+#spanner-three  {
+  background-image: url('../images/vail-rink.jpg');
+}
+
 
 
         /* Single Resort Page*/
@@ -452,10 +619,14 @@ margin: auto;
   width: 90%;
   max-width: 1000px;
   min-width: 400px;
-  background-color: grey;
+  background-color: white;
   text-align: center;
   padding: 0;
   padding-bottom: 300px;
+}
+
+.single-wrap > h1 {
+  color: black;
 }
 
 .pic-info {
@@ -486,14 +657,22 @@ margin: auto;
 
 
 .resort-bottom  {
-  width: 100%
+  width: 100%;
+  background-color: white;
 }
 
 .about_mnt_loc  {
   text-align:justify;
   width: 100%;
   text-align: center;
-  background-color: #ededed;
+  background-color: #7C8A9E;
+  padding: 5px 20px 30px 20px;
+  color: white;
+}
+
+.about_mnt_loc > p {
+  text-align: justify;
+  text-align-last: center;
 }
 
 
@@ -534,18 +713,29 @@ margin: auto;
 position: absolute;
 display: none;
 z-index: 3333;
+padding: 8px 12px 8px 12px;
+border: 1px solid black;
+border-radius: 4px;
+background-color: white;
+opacity: .7;
+transition: all .3s;
+
+
 }
 
 #previous-slide {
-  top: 50;
-  left: 0;
+  top: 100px;
+  left: 5px;;
 }
 
 #next-slide {
-  top: 50;
-  right: 0;
+  top: 100px;
+  right: 5px;
 }
 
+#previous-slide:hover, #next-slide:hover  {
+  opacity: 1;
+}
 
 .mySlides {
   opacity: 0;
@@ -568,95 +758,81 @@ z-index: 3333;
   margin: auto;
 }
 
-#modal-open {
-  padding: 5px 8px 5px 8px;
-  border: 2px solid white;
-  border-radius: 5px;
-  width: 140px;
-  margin: auto;
-}
-
-#modal-open:hover{
-  cursor: pointer;
-}
-
-
-
-.btn  {
- background-color: grey;
-
-}
-
-.btn:hover  {
-  cursor: pointer;
-}
-
-#resSearchForm  {
-  position: relative;
-  text-align: center;
-  margin: auto;
-
-}
-
-.modal-fade {
-  background-color: rgba(0,0,0,.8);
-  transition: background-color .3s;
-}
-
-
-
-.formFirst, .formSecond, .formThird  {
-  display: none;
-  margin: auto;
-  background-color: white;
-  width: 500px;
-  color: black;
-  position: absolute;
-  top: 0px;
-  left: 30%;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.modal-close  {
-  float: right;
-  background-color: grey;
-  padding: 5px 8px 5px 8px;
-  border-radius: 5px;
-  color: white;
-}
-
-.modal-close:hover{
-  cursor: pointer;
-}
-
-
-
 
 
 
 
         /* Search Results  */
 
+#all-resorts  {
+  text-align: center;
+}
+
+#all-resorts > h1 {
+  color: white;
+  margin-top: 150px;
+  margin-bottom: 40px;
+}
+
+#all-resorts > h1::after  {
+  content: '';
+  width: 70%;
+  border-bottom: 2px solid white;
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+}
+
+
+.card-img-top   {
+  max-width: 500px;
+}
+
+
+
+
+
+
+
 .results-wrap   {
   text-align: center;
 }
 
 .card   {
-
+margin-bottom: 25px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
 }
 
-.resort-card  {
+.card-title {
+  font-size: 31px;
+  padding: 10px;
+  color: black;
+}
+
+.quick_stats  {
+  color: black;
+  font-size: 17px;
+}
+
+.card-block   {
+  padding-top: 0px;
+}
+
+#overall-rating {
+  color: black;
+  font-size: 26px;
+}
+
+.resort-cards  {
   text-decoration: none;
 
 }
 
-.resort-card:hover  {
+.resort-cards:hover  {
   text-decoration: none;
 }
 
 .result-resort  {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
     padding: 0;
 }
 

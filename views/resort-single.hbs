@@ -117,6 +117,9 @@ Cost: {{data.cost}}<br />
 
 $(document).ready(() => {
 
+  setTimeout(function() {
+    if( $('.webcam').children().length > 2) {
+
   function test() {
     var slides = document.querySelectorAll('.webcam .mySlides');
     console.log(slides)
@@ -134,9 +137,12 @@ $(document).ready(() => {
       slides[currentSlide].className = 'mySlide activeSlide';
     })
   }
-  setTimeout(test, 8000)
-  $('#previous-slide').delay(8000).fadeIn(500)
-  $('#next-slide').delay(8000).fadeIn(500)
+  setTimeout(test, 1000)
+  $('#previous-slide').delay(1000).fadeIn(500)
+  $('#next-slide').delay(1000).fadeIn(500)
+
+  }
+}, 8000)
 
 
 

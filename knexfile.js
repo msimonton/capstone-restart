@@ -1,4 +1,5 @@
-var dotenv = require('dotenv').config()
+'use strict'
+const dotenv = require('dotenv').config()
 
 module.exports = {
 

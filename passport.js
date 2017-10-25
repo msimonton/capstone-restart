@@ -1,8 +1,8 @@
-var queries = require('./db/query');
-var passport = require('passport')
-var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-var knex = require('./db/knex_config')
-var dotenv = require('dotenv').config()
+const queries = require('./db/query');
+const passport = require('passport')
+const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+const knex = require('./db/knex_config')
+const dotenv = require('dotenv').config()
 
 
 passport.serializeUser(function(user, done) {

@@ -4,7 +4,7 @@ var dotenv = require('dotenv').config()
 module.exports = {
 
   development: {
-    client: 'postgres',
+    client: 'postgresql',
     connection: {
       database: 'snowgo'
     }

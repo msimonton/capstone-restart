@@ -1,11 +1,13 @@
-'use strict'
-const dotenv = require('dotenv').config()
+
+var dotenv = require('dotenv').config()
 
 module.exports = {
 
   development: {
     client: 'postgres',
-    connection: process.env.DATABASE_URL
+    connection: {
+      database: 'snowgo'
+    }
   },
 
   production: {

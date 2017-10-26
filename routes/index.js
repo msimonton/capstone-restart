@@ -40,6 +40,7 @@ const knex = require('../db/knex_config');
 
 
 router.get('/', function(req, res, next) {
+  router.get('/all', function(req, res, next){
     knex('resort_data')
     .join('resort_details', 'resort_data.id', 'resort_details.resort_id').select()
     .then(function(resorts){
@@ -47,6 +48,8 @@ router.get('/', function(req, res, next) {
 
     })
   })
+
+});
 
 router.get('/auth/google', auth.passport.authenticate('google', {
     scope: [

@@ -1,4 +1,4 @@
-"use strict"
+"Use Strict"
 
 $(document).ready(() => {
 //   $('.resID').click(function() {
